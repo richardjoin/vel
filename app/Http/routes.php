@@ -11,23 +11,27 @@
 |
 */
 
+
 //后台
 //首页
 Route::get('/admin', 'admins\indexController@index');
 
 //登录
-Route::get('/admin/login', 'admins\loginController@index');
+Route::get('/admin/login', 'admins\login\loginController@index');
 Route::post('/admin/dologin', 'admins\loginController@dologin');
 
 //用户管理
 Route::resource('/admin/user', 'admins\user\indexController');
 
+
+// 点击显示AmazeUI表单页面
+Route::resource('/admin/amaze', 'admins\amazeController@amaze');
+
+// 点击显示线条表单页面
+Route::resource('/admin/line', 'admins\lineController@line');
+
+
+
 //==================================================================
 
-//前台
-//首页 
-Route::get('/', 'homes\indexController@index');
 
-//登录页
-Route::get('home/login', 'homes\login\loginController@index');
-Route::post('home/dologin', 'homes\login\loginController@dologin');

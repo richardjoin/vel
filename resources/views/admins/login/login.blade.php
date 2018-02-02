@@ -10,12 +10,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <link rel="icon" type="image/png" href="assets/i/favicon.png">
-  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <link rel="icon" type="image/png" href="/admins/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="/admins/i/app-icon72x72@2x.png">
   <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-  <link rel="stylesheet" href="assets/css/amazeui.min.css" />
-  <link rel="stylesheet" href="assets/css/admin.css">
-  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="/admins/css/amazeui.min.css" />
+  <link rel="stylesheet" href="/admins/css/admin.css">
+  <link rel="stylesheet" href="/admins/css/app.css">
 </head>
 
 <body data-type="login">
@@ -33,7 +33,7 @@
 			<i>Log In </i> or <span> Sign Up</span>
 		</div>
 		<div class="am-u-sm-10 login-am-center">
-			<form class="am-form">
+			<form action="{{ url('/admin/dologin') }}" class="am-form">
 				<fieldset>
 					<div class="am-form-group">
 						<input type="email" class="" id="doc-ipt-email-1" placeholder="输入电子邮件">
@@ -48,9 +48,9 @@
 	</div>
 </div>
 
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/amazeui.min.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script src="/admins/js/jquery.min.js"></script>
+  <script src="/admins/js/amazeui.min.js"></script>
+  <script src="/admins/js/app.js"></script>
 </body>
 
 </html>
