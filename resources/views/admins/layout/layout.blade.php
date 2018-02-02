@@ -173,11 +173,12 @@
                     <li class="tpl-left-nav-item">
 
                         <!-- 栏目管理 -->
-                        <a href="{{ url('admin/column') }}" class="nav-link tpl-left-nav-link-list">
+                        <a href="{{ url('admin/column') }}" class="nav-link ">
                             <i class="am-icon-table"></i>
                             <span>栏目管理</span>
                             <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                         </a>
+
                         <a href="javascript: void(0);" class="nav-link tpl-left-nav-link-list">
                             <i class="am-icon-table"></i>
                             <span>文章管理</span>
@@ -185,18 +186,15 @@
                         </a>
                         <ul class="tpl-left-nav-sub-menu">
                             <li>
-                                <a href="table-font-list.html">
+                                <a href="{{ url('admin/column') }}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>文章分类</span>
-                                    <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                                 </a>
 
-                                <a href="table-images-list.html">
+                                <a href="{{ url('admin/article') }}">
                                     <i class="am-icon-angle-right"></i>
-                                    <span>图片表格</span>
-                                    <i class="tpl-left-nav-content tpl-badge-success">
-                       18
-                     </i>
+                                    <span>管理文章</span>
+                                </i>
 
 
                                     <a href="form-news.html">
@@ -205,18 +203,19 @@
                                         <i class="tpl-left-nav-content tpl-badge-primary">
                                            5
                                          </i>
+                                    </a>
 
 
-                                        <a href="form-news-list.html">
-                                            <i class="am-icon-angle-right"></i>
-                                            <span>文字列表</span>
-
-                                        </a>
+                                       <!--  <a href="form-news-list.html">
+                                           <i class="am-icon-angle-right"></i>
+                                           <span>文字列表</span>
+                                       
+                                       </a> -->
                             </li>
                         </ul>
                     </li>
 
-                    <li class="tpl-left-nav-item">
+                    <!-- <li class="tpl-left-nav-item">
                         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
                             <i class="am-icon-wpforms"></i>
                             <span>表单</span>
@@ -229,14 +228,14 @@
                                     <span>Amaze UI 表单</span>
                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                                 </a>
-
+                    
                                 <a href="{{ url('admin/line') }}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>线条表单</span>
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
 
                     <li class="tpl-left-nav-item">
                         <a href="{{ url('/admin/login') }}" class="nav-link tpl-left-nav-link-list">

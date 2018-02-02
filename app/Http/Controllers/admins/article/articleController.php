@@ -1,24 +1,32 @@
 <?php
 
-namespace App\Http\Controllers\admins\column;
+namespace App\Http\Controllers\admins\article;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class columnController extends Controller
+class articleController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        return view('admins/column/index');
+        return view('admins/article/article');
     }
 
-    
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-        //显示添加页面
-        return view('admins/column/add');
+        return view('admins/article/add');
     }
 
     /**
@@ -77,5 +85,4 @@ class columnController extends Controller
     {
         //删除
     }
-
 }

@@ -26,6 +26,8 @@ Route::resource('/admin/user', 'admins\user\indexController');
 //栏目管理
 Route::resource('/admin/column', 'admins\column\columnController');
 
+//文章管理
+Route::resource('/admin/article', 'admins\article\articleController');
 
 // 点击显示AmazeUI表单页面
 Route::resource('/admin/amaze', 'admins\amazeController@amaze');
