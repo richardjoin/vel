@@ -3,7 +3,7 @@
     <head>
         <title>Laravel</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        
 
         <style>
             html, body {
@@ -38,8 +38,26 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Laravel 5.1</div>
             </div>
+				<form action="/test" method="post">
+				{{ csrf_field() }}
+					<input type="submit" value="post提交" />
+				</form>
+				<form action="/test" method="get">
+					<input type="submit" value="get提交" />
+				</form>
+				<form action="/test" method="post">
+				{{ method_field('PUT') }}
+				{{ csrf_field() }}
+					<input type="submit" value="put提交" />
+				</form> 
+				<form action="/test" method="post">
+				{{ method_field('DELETE') }}
+				{{ csrf_field() }}
+					<input type="submit" value="delete提交">
+				</form>
+				
         </div>
     </body>
 </html>

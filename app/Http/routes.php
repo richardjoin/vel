@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+
+
+// 点击显示AmazeUI表单页面
+Route::resource('/amaze', 'admin\amazeController@amaze');
+
+// 点击显示线条表单页面
+Route::resource('/line', 'admin\lineController@line');
+
+// 跳转后台登陆页面
+Route::resource('/login', 'admin\loginController@login')
