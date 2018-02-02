@@ -27,11 +27,17 @@ Route::resource('/admin/user', 'admins\user\indexController');
 Route::resource('/admin/column', 'admins\column\columnController');
 
 
-// 点击显示AmazeUI表单页面
+// 点击显示添加用户表单页面
 Route::resource('/admin/amaze', 'admins\amazeController@amaze');
 
-// 点击显示线条表单页面
+// 点击显示添加文章表单页面
 Route::resource('/admin/line', 'admins\lineController@line');
+
+
+// 权限管理主页面
+Route::resource('/admin/auth', 'admins\authController@auth');
+// 添加权限 与 修改权限 页面
+Route::resource('/admin/authx', 'admins\authController@authx');
 
 
 
