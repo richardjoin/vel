@@ -26,6 +26,7 @@ class indexController extends Controller
      */
     public function create()
     {
+        //显示添加页面
         return view('admins/user/add');
     }
 
@@ -37,7 +38,7 @@ class indexController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //判断添加是否成功
     }
 
     /**
@@ -59,6 +60,7 @@ class indexController extends Controller
      */
     public function edit($id)
     {
+        //显示修改页面
         return view('admins/user/edit');
     }
 
@@ -71,7 +73,7 @@ class indexController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //判断是否修改成功
     }
 
     /**
@@ -82,6 +84,6 @@ class indexController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //删除
     }
 }

@@ -34,6 +34,7 @@
 		</div>
 		<div class="am-u-sm-10 login-am-center">
 			<form action="{{ url('/admin/dologin') }}" class="am-form">
+				{{ csrf_field() }}
 				<fieldset>
 					<div class="am-form-group">
 						<input type="email" class="" id="doc-ipt-email-1" placeholder="输入电子邮件">

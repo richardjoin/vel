@@ -18,10 +18,13 @@ Route::get('/admin', 'admins\indexController@index');
 
 //登录
 Route::get('/admin/login', 'admins\login\loginController@index');
-Route::post('/admin/dologin', 'admins\loginController@dologin');
+Route::post('/admin/dologin', 'admins\login\loginController@dologin');
 
 //用户管理
 Route::resource('/admin/user', 'admins\user\indexController');
+
+//栏目管理
+Route::resource('/admin/column', 'admins\column\columnController');
 
 
 // 点击显示AmazeUI表单页面
