@@ -240,7 +240,7 @@
                                     <span>用户权限管理</span>
                                 </a>
 								
-								<a href="{{ url('admin/auth') }}">
+								<a href="{{ url('admin/atm') }}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>广告管理</span>
                                 </a>

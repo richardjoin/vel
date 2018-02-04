@@ -35,11 +35,15 @@ Route::resource('/admin/line', 'admins\lineController@line');
 
 
 // 权限管理主页面
-Route::resource('/admin/auth', 'admins\authController@auth');
+Route::resource('/admin/auth', 'admins\auth\authController@auth');
 // 添加权限 与 修改权限 页面
-Route::resource('/admin/authx', 'admins\authController@authx');
+Route::resource('/admin/authx', 'admins\auth\authController@authx');
 
 
+// 广告管理
+Route::resource('/admin/atm', 'admins\atms\atmController@atm');
+// 添加广告页面
+Route::resource('/admin/atmadd', 'admins\atms\atmController@atmadd');
 
 //==================================================================
 
