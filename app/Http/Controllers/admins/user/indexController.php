@@ -20,7 +20,8 @@ class indexController extends Controller
         //一张表格的数据
         //$res = user::all();
         //1对1
-        $res = user::find(1)->user_login()->value('login_name');
+        //$res = user::find(1)->user_login()->value('login_name');
+        $res = user::all();
         dd($res);
         return view('admins/user/index');
     }

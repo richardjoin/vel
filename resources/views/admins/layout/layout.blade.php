@@ -214,16 +214,48 @@
                             </li>
                         </ul>
                     </li>
-
-                    <!-- <li class="tpl-left-nav-item">
-                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                    <!-- 权限管理 -->
+                    <li class="tpl-left-nav-item">
+                        <a href="javascript: void(0);" class="nav-link tpl-left-nav-link-list">
                             <i class="am-icon-wpforms"></i>
-                            <span>表单</span>
+                            <span>权限管理</span>
                             <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
                         </a>
                         <ul class="tpl-left-nav-sub-menu" style="display: block;">
                             <li>
-                                <a href="{{ url('admin/amaze') }}">
+                                <!-- <a href="{{ url('admin/amaze') }}">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>Amaze UI 表单</span>
+                                    <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                                </a>
+                                                    
+                                <a href="{{ url('admin/line') }}">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>线条表单</span>
+                                </a> -->
+								
+								<a href="{{ url('admin/auth') }}">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>用户权限管理</span>
+                                </a>
+								
+								<!-- <a href="{{ url('admin/atm') }}">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>广告管理</span>
+                                </a> -->
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 广告管理 -->
+                    <li class="tpl-left-nav-item">
+                        <a href="javascript: void(0);" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-wpforms"></i>
+                            <span>广告管理</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu" style="display: block;">
+                            <li>
+                                <!-- <a href="{{ url('admin/amaze') }}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>Amaze UI 表单</span>
                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
@@ -233,19 +265,19 @@
                                     <i class="am-icon-angle-right"></i>
                                     <span>线条表单</span>
                                 </a>
-								
-								<a href="{{ url('admin/auth') }}">
+                                
+                                <a href="{{ url('admin/auth') }}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>用户权限管理</span>
-                                </a>
-								
-								<a href="{{ url('admin/atm') }}">
+                                </a> -->
+                                
+                                <a href="{{ url('admin/atm') }}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>广告管理</span>
                                 </a>
                             </li>
                         </ul>
-                    </li> -->
+                    </li>
 
                     <li class="tpl-left-nav-item">
                         <a href="{{ url('/admin/login') }}" class="nav-link tpl-left-nav-link-list">
