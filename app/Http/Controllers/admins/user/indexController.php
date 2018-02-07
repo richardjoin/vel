@@ -21,9 +21,9 @@ class indexController extends Controller
         //$res = user::all();
         //1对1
         //$res = user::find(1)->user_login()->value('login_name');
-        $res = user::all();
-        dd($res);
-        return view('admins/user/index');
+        $res = user::find(1)->get();
+        //var_dump($res);
+        return view('admins/user/index',['res'=>$res]);
     }
 
     /**
@@ -45,7 +45,18 @@ class indexController extends Controller
      */
     public function store(Request $request)
     {
-        //判断添加是否成功
+        $arr = $request->except('_token');
+        //dd($arr);
+        $res = user::create($arr);
+        //把添加的变成array
+        $res = $res->toArray();
+        //dd($res);
+        if($res){
+            return redirect('admin/user');
+        }else{
+            return back()->with('xxx');
+        }
+
     }
 
     /**
@@ -67,8 +78,9 @@ class indexController extends Controller
      */
     public function edit($id)
     {
-        //显示修改页面
-        return view('admins/user/edit');
+        $res = user::where('id',$id)->first();
+        //var_dump($res);
+        return view('admins/user/edit',['res'=>$res]);
     }
 
     /**
@@ -80,7 +92,15 @@ class indexController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //判断是否修改成功
+        //修改数据
+        $res = $request->except('_method','_token');
+        $arr = user::where('id',$id)->update($res);
+        //dd($arr);
+        if($res){
+            return redirect('admin/user');
+        }else{
+            return back()->with('error',"修改失败！！！！！！");
+        }
     }
 
     /**
@@ -91,6 +111,10 @@ class indexController extends Controller
      */
     public function destroy($id)
     {
-        //删除
+        $res = user::where('id',$id)->delete();
+        //dd($res);
+        
+        return $res;
+       
     }
 }

@@ -61,41 +61,55 @@
                     </div>
                     <div class="am-g">
                         <div class="tpl-table-images">
-                            <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
-                                <div class="tpl-table-images-content">
-                                    <div class="tpl-table-images-content-i-time">发布时间：2016-09-12</div>
-                                    <div class="tpl-i-title">
-                                        “你的旅行，是什么颜色？” 晒照片，换北欧梦幻极光之旅！
-                                    </div>
-                                    <a href="javascript:;" class="tpl-table-images-content-i">
-                                        <div class="tpl-table-images-content-i-info">
-                                            <span class="ico">
-                                    <img src="/admins/img/user02.png" alt="">追逐
-                                 </span>
-
-                                        </div>
-                                        <span class="tpl-table-images-content-i-shadow"></span>
-                                        <img src="/admins/img/a1.png" alt="">
-                                    </a>
+                            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                               <table class="am-table am-table-striped am-table-hover table-main">
+                                    <thead>
+                                        <tr>
+                                            <th class="table-check"><input type="checkbox" class="tpl-table-fz-check"></th>
+                                            <th class="table-id">ID</th>
+                                            <th class="table-title">姓名</th>
+                                            <th class="table-type">性别</th>
+                                            <th class="table-author am-hide-sm-only">电话</th>
+                                            <th class="table-author am-hide-sm-only">密码</th>
+                                            <th class="table-author am-hide-sm-only">地址</th>
+                                            <th class="table-set">操作</th>
+                                        </tr>
+                                    </thead>
+                                @foreach($res as $v)
                                     <div class="tpl-table-images-content-block">
-                                        <div class="tpl-i-font">
-                                            你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片。
-                                        </div>
-                                        <div class="tpl-i-more">
-                                            <ul>
-                                                <li><span class="am-icon-qq am-text-warning"> 100+</span></li>
-                                                <li><span class="am-icon-weixin am-text-success"> 235+</span></li>
-                                                <li><span class="am-icon-github font-green"> 600+</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="am-btn-toolbar">
-                                            <div class="am-btn-group am-btn-group-xs tpl-edit-content-btn">
-                                                <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-edit"></span> <a href="{{ url('admin/user/1/edit') }}">编辑</a></button>
-                                                <!-- <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button> -->
-                                                <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> <a href="{{ url('admin/user') }}">删除</a></button>
-                                            </div>
-                                        </div>
+                                        <tbody>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>{{$v->id}}</td>
+                                            <td><a href="#">{{$v->name}}</a></td>
+                                            <td>{{ ($v->sex=='m')?'男':'女' }}</td>
+                                            <td>{{$v->phone}}</td>
+                                            <td>{{$v->pwd}}</td>
+                                            <td class="am-hide-sm-only">{{$v->address}}</td>
+                                            <td>
+                                                <div class="am-btn-group am-btn-group-xs tpl-edit-content-btn">
+                                                <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-edit"></span> <a href="{{ url('admin/user/'.$v->id.'/edit') }}">编辑</a></button>
+                                                <span onClick="del({{$v->id}})" type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o">删除</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
                                     </div>
+                                @endforeach
+                                </table>
+                                <div class="am-cf">
+                                    <div class="am-fr">
+                                        <ul class="am-pagination tpl-pagination">
+                                            <li class="am-disabled"><a href="#">«</a></li>
+                                            <li class="am-active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#" >3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li><a href="#">»</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -111,8 +125,24 @@
     <script src="/admins/js/jquery.min.js"></script>
     <script src="/admins/js/amazeui.min.js"></script>
     <script src="/admins/js/app.js"></script>
+    <script src="/layer/layer.js"></script>
+    <script type="text/javascript">
+            function del(id){
+                layer.confirm('你确定要删除吗？', {
+                    btn:['确定','取消']
+                    },function(){
+                        $.post('{{url("admin/user")}}/'+id,{'_token':'{{csrf_token()}}','_method':'delete'},function(data){
+                            if(data == 1){
+                                layer.msg('删除成功');
+                            }else{
+                                layer.msg('删除失败');
+                            }
+                        });
+                    })
+            }
+    </script>
 </body>
 
 </html>
-
+    
 @endsection

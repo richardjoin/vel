@@ -197,13 +197,6 @@
                                 </i>
 
 
-                                    <a href="form-news.html">
-                                        <i class="am-icon-angle-right"></i>
-                                        <span>消息列表</span>
-                                        <i class="tpl-left-nav-content tpl-badge-primary">
-                                           5
-                                         </i>
-                                    </a>
 
 
                                        <!--  <a href="form-news-list.html">
