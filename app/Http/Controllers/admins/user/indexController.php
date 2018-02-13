@@ -21,9 +21,9 @@ class indexController extends Controller
         //$res = user::all();
         //1对1
         //$res = user::find(1)->user_login()->value('login_name');
-        $res = user::all();
-        dd($res);
-        return view('admins/user/index');
+        $res = user::find(1)->get();
+        //var_dump($res);
+        return view('admins/user/index',['res'=>$res]);
     }
 
     /**
@@ -45,7 +45,18 @@ class indexController extends Controller
      */
     public function store(Request $request)
     {
-        //判断添加是否成功
+        $arr = $request->except('_token');
+        //dd($arr);
+        $res = user::create($arr);
+        //把添加的变成array
+        $res = $res->toArray();
+        //dd($res);
+        if($res){
+            return redirect('admin/user');
+        }else{
+            return back()->with('xxx');
+        }
+
     }
 
     /**

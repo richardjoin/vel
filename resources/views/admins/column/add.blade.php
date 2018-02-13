@@ -32,6 +32,7 @@
 
                         <div class="am-u-sm-12 am-u-md-9">
                             <form class="am-form am-form-horizontal">
+                            {{ csrf_field() }}
                                 <div class="am-form-group">
                                     <label for="user-name" class="am-u-sm-3 am-form-label">姓名 / Name</label>
                                     <div class="am-u-sm-9">
