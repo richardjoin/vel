@@ -14,9 +14,9 @@
 
 //后台
 
-	//登录
+//登录
 Route::resource('/admin/login', 'admins\login\loginController');
-	//验证码
+//验证码
 Route::get('/admin/code', 'admins\login\loginController@code');
 
 Route::group(['prefix' => 'admin', 'middleware'=>'logins'], function(){

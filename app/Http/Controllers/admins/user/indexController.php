@@ -78,8 +78,9 @@ class indexController extends Controller
      */
     public function edit($id)
     {
-        //显示修改页面
-        return view('admins/user/edit');
+        $res = user::where('id',$id)->first();
+        //var_dump($res);
+        return view('admins/user/edit',['res'=>$res]);
     }
 
     /**
@@ -91,7 +92,15 @@ class indexController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //判断是否修改成功
+        //修改数据
+        $res = $request->except('_method','_token');
+        $arr = user::where('id',$id)->update($res);
+        //dd($arr);
+        if($res){
+            return redirect('admin/user');
+        }else{
+            return back()->with('error',"修改失败！！！！！！");
+        }
     }
 
     /**
@@ -102,6 +111,10 @@ class indexController extends Controller
      */
     public function destroy($id)
     {
-        //删除
+        $res = user::where('id',$id)->delete();
+        //dd($res);
+        
+        return $res;
+       
     }
 }
