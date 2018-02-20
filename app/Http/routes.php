@@ -56,10 +56,17 @@ Route::group(['prefix' => 'admin', 'middleware'=>'logins'], function(){
 
 //前台(首页)
 Route::get('/','home\IndexController@index');
-//前台(登录)
+//前台(登录页面)
 Route::get('/login','home\LoginController@index');
-Route::get('/login/register','home\LoginController@create');
-Route::get('/login/password','home\LoginController@pass');
+//验证登录
+Route::resource('/login/store','home\LoginController@store');
+//注册
+Route::resource('/login/register','home\LoginController@zhuce');
+//修改密码
+Route::resource('/login/password','home\LoginController@pass');
+//验证码
+Route::get('/login/code', 'home\LoginController@code');
+
 //前台(关于我)
 Route::get('/about','home\AboutController@index');
 //前台(成长)

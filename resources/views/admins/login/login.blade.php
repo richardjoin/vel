@@ -37,11 +37,11 @@
 				{{ csrf_field() }}
 				<fieldset>
 					<div class="am-form-group">
-						<input type="text" style="border-radius: 5px;" name="name" id="doc-ipt-email-1" placeholder="输入电子邮件">
+						<input type="text" style="border-radius: 5px;" name="name" id="doc-ipt-email-1" placeholder="输入用户名">
 					</div>
 					<br>
 					<div class="am-form-group">
-						<input type="text" style="border-radius: 5px;" name="pwd" id="doc-ipt-pwd-1" placeholder="设置个密码吧">
+						<input type="text" style="border-radius: 5px;" name="pwd" id="doc-ipt-pwd-1" placeholder="设置密码">
 					</div><br>
 					<div class="am-form-group">
 						<input type="text" name="code" id="doc-ipt-pwd-1" style="width:250px;float:left;border-radius: 5px;" placeholder="输入验证码！">
