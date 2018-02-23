@@ -59,9 +59,11 @@ Route::get('/','home\IndexController@index');
 //前台(登录页面)
 Route::get('/login','home\LoginController@index');
 //验证登录
-Route::resource('/login/store','home\LoginController@store');
+Route::resource('/login/ldl','home\LoginController@ldl');
 //注册
-Route::resource('/login/register','home\LoginController@zhuce');
+Route::resource('/login/register','home\LoginController@create');
+//注册验证
+Route::resource('/login/store', 'home\LoginController@store');
 //修改密码
 Route::resource('/login/password','home\LoginController@pass');
 //验证码

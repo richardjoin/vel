@@ -46,34 +46,35 @@
 				<img  src="/home/login/images/33.jpg">
 			</div>
 			<div class="register_con password_con">
-				<div class="text_box">
+				<form action="{{ url('login/store') }}" method="post" class="text_box">
+					{{ csrf_field() }}
 					<div>
-						<div><i><img src="/home/login/images/icon01.png"></i><input type="text" placeholder="请输入数字用户名">
+						<div><i><img src="/home/login/images/icon01.png"></i><input type="text" name="name" placeholder="请输入数字用户名">
 							<span>*</span>
 						</div>
-						<div><i><img src="/home/login/images/icon04.png"></i><input type="text" placeholder="请输入您的邮箱">
+						<div><i><img src="/home/login/images/icon04.png"></i><input name="email" type="text" placeholder="请输入您的邮箱">
 							<span>*</span>
 						</div>
-						<div><i><img src="/home/login/images/icon02.png"></i><input type="password" placeholder="请输入您的密码">
+						<div><i><img src="/home/login/images/icon02.png"></i><input type="password" name="pwd" placeholder="请输入您的密码">
 							<span>*</span>
 						</div>
-						<div><i><img src="/home/login/images/icon02.png"></i><input type="password" placeholder="请再次输入您的密码">
+						<div><i><img src="/home/login/images/icon02.png"></i><input type="password" name="password" placeholder="请再次输入您的密码">
 							<span>*</span>
 						</div>
 						<div class="yzm">
-							<i><img src="/home/login/images/icon03.png"></i><input type="text" placeholder="请输入验证码">
-							<label><img src="/home/login/images/yzm.png"></label><span>*</span>
+							<i><img src="/home/login/images/icon03.png"></i><input name="code" style="width: 200px;" type="text" placeholder="请输入验证码">
+							<label style="float: right;width: 100px;margin-right: 30px;"><img style="float: right;width: 190px;" src="{{url('admin/code')}}"></label>
 						</div>
 						<h4><a href="#">《网站服务协议》</a></h4>
-						<button><a href="{{ url('/login') }} ">同意以上协议并注册</a></button>
+						<button type="submit">同意以上协议并注册</button>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>
 	<!-- footer -->
 	<div class="footer">
-		<p>版权所有&nbsp;&nbsp;&nbsp;Copyright © 个人博客&nbsp;&nbsp;&nbsp;&nbsp;电话：400-6677-937</p>
+		<p>版权所有&nbsp;&nbsp;&nbsp; © 个人博客&nbsp;&nbsp;&nbsp;&nbsp;电话：400-6677-937324</p>
 		<p><a>京ICP备：14012449号</a>黔ICP证：黔B2-20140009号<span>京公网安备：11010602030054号</span></p>
 	</div>
 </body>

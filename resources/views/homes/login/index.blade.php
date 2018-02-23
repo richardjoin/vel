@@ -57,18 +57,18 @@
 				</div>
 			</div>
 			<div class="login_con">
-				<h1>登录/LOGIN</h1>
+				<h1>登录</h1>
 				<div class="text_box">
-				
-						<form action="{{ url('login/store') }}" method="post" style="padding-top:50px">
+						<form action="{{ url('login/ldl') }}" method="post" style="padding-top:50px">
 							{{ csrf_field() }}
 							<div style="margin-left: 30px;">
-								用户名:<input type="text" style="border-radius: 5px;height:35px;" name="name" id="doc-ipt-email-1" placeholder="输入用户名">
+								<input type="text" style="border-radius: 5px;height:35px;width: 280px;" name="name" id="doc-ipt-email-1" placeholder="输入用户名">
 							</div><br>
-							<div style="margin-left: 30px;">密码:&nbsp;&nbsp;&nbsp;<input style="border-radius: 5px;height:35px;" type="password" name="pwd" placeholder="请输入密码"></div><br>
 							<div style="margin-left: 30px;">
-								<input type="text" style="border-radius: 5px;height:35px;margin-bottom: 10px;float: left;width:130px;" name="code" placeholder="请输入验证码">
-								<img style="float: right;width: 130px;margin-right: 20px;" src="{{url('admin/code')}}">
+								<input style="border-radius: 5px;height:35px;width: 280px;" type="password" name="pwd" placeholder="请输入密码"></div><br>
+							<div style="margin-left: 30px;">
+								<input type="text" style="border-radius: 5px;height:35px;margin-bottom: 20px;float: left;width:125px;" name="code" placeholder="请输入验证码">
+								<img style="float: right;width: 130px;margin-right: 30px;" src="{{url('admin/code')}}">
 							</div>
 							
 							<button style="margin-left:25px;" type="submit" class="am-btn am-btn-default">登录</button>
