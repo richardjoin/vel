@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\model\Nav;
+use App\model\article_sort;
 
 class columnController extends Controller
 {
     public function index()//显示导航列表
     {
-        $data = Nav::OrderBy('nav_order','asc')->paginate(10);
+        $data = article_sort::OrderBy('sort_article_name','asc')->paginate(10);
         return view('admins/column/index',['data'=>$data]);
     }
 

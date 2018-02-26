@@ -82,9 +82,9 @@
 
     </div>
 
-	<script src="{{ asset('mb/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('mb/js/amazeui.min.js') }}"></script>
-    <script src="{{ asset('mb/js/app.js') }}"></script>
+	<script src="/admins/js/jquery.min.js"></script>
+    <script src="/admins/js/amazeui.min.js"></script>
+    <script src="/admins/js/app.js"></script>
 </body>
 
 </html>

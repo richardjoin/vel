@@ -104,9 +104,9 @@
     </div>
 
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/amazeui.min.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="/admins/js/jquery.min.js"></script>
+    <script src="/admins/js/amazeui.min.js"></script>
+    <script src="/admins/js/app.js"></script>
 </body>
 
 </html>

@@ -90,7 +90,7 @@
                                                 <div class="am-btn-group am-btn-group-xs tpl-edit-content-btn">
                                                 <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-edit"></span> <a href="{{ url('admin/user/'.$v->id.'/edit') }}">编辑</a></button>
                                                 
-                                                <span onClick="del({{$v->id}})" type="button" class="am-btn am-btn-default am-btn-danger">删除</span>
+                                                <a onClick="del({{$v->id}})" type="button" class="am-btn am-btn-default am-btn-danger">删除</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -141,7 +141,7 @@
                             }
                         });
                     })
-
+            }
     </script>
 </body>
 
