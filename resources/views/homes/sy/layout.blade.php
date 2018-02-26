@@ -6,11 +6,11 @@
 		<title>风宇个人博客</title>
 	</head>
 
-	<link href="/home/sy/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="/home/sy/css/common.css" />
-	<link href="/home/sy/img/logo.ico" rel="shortcut icon" />
-	<script src="/home/sy/plugin/jquery.min.js"></script>
-	<script src="/home/sy/plugin/bootstrap/js/bootstrap.min.js"></script>
+	<link href="./home/sy/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./home/sy/css/common.css" />
+	<link href="./home/sy/img/logo.ico" rel="shortcut icon" />
+	<script src="./home/sy/plugin/jquery.min.js"></script>
+	<script src="./home/sy/plugin/bootstrap/js/bootstrap.min.js"></script>
 	<!--<script type="text/javascript" src="plugin/jquery.page.js"></script>-->
 	<!--<script src="js/common.js"></script>-->
 	<!--<script src="js/snowy.js"></script>-->
