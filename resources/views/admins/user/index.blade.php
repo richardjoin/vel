@@ -89,7 +89,8 @@
                                             <td>
                                                 <div class="am-btn-group am-btn-group-xs tpl-edit-content-btn">
                                                 <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-edit"></span> <a href="{{ url('admin/user/'.$v->id.'/edit') }}">编辑</a></button>
-                                                <span onClick="del({{$v->id}})" type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o">删除</span>
+                                                
+                                                <span onClick="del({{$v->id}})" type="button" class="am-btn am-btn-default am-btn-danger">删除</span>
                                                 </div>
                                             </td>
                                         </tr>
@@ -127,6 +128,7 @@
     <script src="/admins/js/app.js"></script>
     <script src="/layer/layer.js"></script>
     <script type="text/javascript">
+
             function del(id){
                 layer.confirm('你确定要删除吗？', {
                     btn:['确定','取消']
@@ -139,7 +141,7 @@
                             }
                         });
                     })
-            }
+
     </script>
 </body>
 

@@ -13,14 +13,17 @@
 
 
 //后台
-//首页
-
-Route::get('/admin', 'admins\indexController@index');
 
 //登录
-Route::get('/admin/login', 'admins\login\loginController@index');
-Route::post('/admin/dologin', 'admins\login\loginController@dologin');
-Route::group(['prefix' => 'admin'], function(){
+Route::resource('/admin/login', 'admins\login\loginController');
+//验证码
+Route::get('/admin/code', 'admins\login\loginController@code');
+
+Route::group(['prefix' => 'admin', 'middleware'=>'logins'], function(){
+
+	//首页
+
+	Route::get('/', 'admins\indexController@index');
 	//用户管理
 	Route::resource('/user', 'admins\user\indexController');
 
@@ -53,10 +56,19 @@ Route::group(['prefix' => 'admin'], function(){
 
 //前台(首页)
 Route::get('/','home\IndexController@index');
-//前台(登录)
+//前台(登录页面)
 Route::get('/login','home\LoginController@index');
-Route::get('/login/register','home\LoginController@create');
-Route::get('/login/password','home\LoginController@pass');
+//验证登录
+Route::resource('/login/ldl','home\LoginController@ldl');
+//注册
+Route::resource('/login/register','home\LoginController@create');
+//注册验证
+Route::resource('/login/store', 'home\LoginController@store');
+//修改密码
+Route::resource('/login/password','home\LoginController@pass');
+//验证码
+Route::get('/login/code', 'home\LoginController@code');
+
 //前台(关于我)
 Route::get('/about','home\AboutController@index');
 //前台(成长)

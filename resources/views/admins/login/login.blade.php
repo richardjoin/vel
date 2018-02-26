@@ -33,15 +33,20 @@
 			<i>Log In </i> or <span> Sign Up</span>
 		</div>
 		<div class="am-u-sm-10 login-am-center">
-			<form action="{{ url('/admin/dologin') }}" class="am-form">
+			<form action="{{ url('/admin/login') }}" method="post" class="am-form">
 				{{ csrf_field() }}
 				<fieldset>
 					<div class="am-form-group">
-						<input type="email" class="" id="doc-ipt-email-1" placeholder="输入电子邮件">
+						<input type="text" style="border-radius: 5px;" name="name" id="doc-ipt-email-1" placeholder="输入用户名">
 					</div>
+					<br>
 					<div class="am-form-group">
-						<input type="password" class="" id="doc-ipt-pwd-1" placeholder="设置个密码吧">
-					</div>
+						<input type="text" style="border-radius: 5px;" name="pwd" id="doc-ipt-pwd-1" placeholder="设置密码">
+					</div><br>
+					<div class="am-form-group">
+						<input type="text" name="code" id="doc-ipt-pwd-1" style="width:250px;float:left;border-radius: 5px;" placeholder="输入验证码！">
+						<img style="float:left;margin-left: 20px;" src="{{url('admin/code')}}" alt="">
+					</div><br><br>
 					<p><button type="submit" class="am-btn am-btn-default">登录</button></p>
 				</fieldset>
 			</form>

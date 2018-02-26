@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Session;
 
 class loginsMiddleware
 {
@@ -15,6 +16,10 @@ class loginsMiddleware
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if(session('id')){
+            return $next($request);
+        }else{
+            return redirect('/admin/login');
+        }
     }
 }
