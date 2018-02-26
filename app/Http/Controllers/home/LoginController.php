@@ -9,7 +9,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 
 use Gregwar\Captcha\CaptchaBuilder;
-use App\model\login;
 use App\model\user;
 use Session;
 
@@ -47,10 +46,10 @@ class LoginController extends Controller
         }
 
         //判断name是否正确
-        $login = login::where('name',$res['name'])->first();
-        session(['id'=>$login->id]);
+        $user = user::where('name',$res['name'])->first();
+        session(['id'=>$user->id]);
         //dd($login->password);
-        if($login->name == $res['name'] && $login->password == $res['pwd']){
+        if($user->name == $res['name'] && $user->pwd == $res['pwd']){
 
             return redirect('/');
         }
