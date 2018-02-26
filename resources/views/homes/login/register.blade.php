@@ -10,35 +10,11 @@
 <!-- css -->
 <link rel="stylesheet" type="text/css" href="/home/login/css/index.css">
 <!-- home/login/js/ -->
-<script type="text/javascript" src="/home/login/js//jquery.home/login/js/"></script>
-<script type="text/javascript" src="/home/login/js//public.home/login/js/"></script>
+<script type="text/javascript" src="/admins/js/jquery.min.js"></script>
 
 </head>
 
 <body>
-	<div class="top_box">
-		<div class="wid_con">
-			<div class="top_con">
-				<!-- <div class="top_logo">
-					<a href="http://www.wangid.com">
-						<img src="images/logo_touming.gif">
-					</a>
-					<span>免费注册/Register</span>
-				</div>
-				<div class="top_menu">
-					<ul>
-						<li><a href="#">新 闻</a></li>
-						<li class="cur"><a href="#">网 页</a></li>
-						<li><a href="#">网 酷</a></li>
-						<li><a href="#">名 榜</a></li>
-						<li><a href="#">黄 页</a></li>
-						<li><a href="#">通 城</a></li>
-					</ul>
-					<i></i>
-				</div> -->
-			</div>
-		</div>
-	</div>
 	<div class="content">
 		<div class="wid_con loginbox">
 			<div style="padding-top:45px;" class="register_txt">
@@ -52,18 +28,18 @@
 						<div><i><img src="/home/login/images/icon01.png"></i><input type="text" name="name" placeholder="请输入数字用户名">
 							<span>*</span>
 						</div>
-						<div><i><img src="/home/login/images/icon04.png"></i><input name="email" type="text" placeholder="请输入您的邮箱">
-							<span>*</span>
-						</div>
 						<div><i><img src="/home/login/images/icon02.png"></i><input type="password" name="pwd" placeholder="请输入您的密码">
 							<span>*</span>
 						</div>
 						<div><i><img src="/home/login/images/icon02.png"></i><input type="password" name="password" placeholder="请再次输入您的密码">
 							<span>*</span>
 						</div>
+						<div><i><img src="/home/login/images/icon04.png"></i><input name="phone" id="phone" type="text" placeholder="请输入您的手机号">
+							<span>*</span>
+						</div>
 						<div class="yzm">
-							<i><img src="/home/login/images/icon03.png"></i><input name="code" style="width: 200px;" type="text" placeholder="请输入验证码">
-							<label style="float: right;width: 100px;margin-right: 30px;"><img style="float: right;width: 190px;" src="{{url('admin/code')}}"></label>
+							<i><img src="/home/login/images/icon03.png"></i><input name="phone" style="width: 200px;" type="text" placeholder="请输入验证码">
+							<a href="javascript: void(0);" onClick="put()">获取验证码</a>
 						</div>
 						<h4><a href="#">《网站服务协议》</a></h4>
 						<button type="submit">同意以上协议并注册</button>
@@ -77,5 +53,15 @@
 		<p>版权所有&nbsp;&nbsp;&nbsp; © 个人博客&nbsp;&nbsp;&nbsp;&nbsp;电话：400-6677-937324</p>
 		<p><a>京ICP备：14012449号</a>黔ICP证：黔B2-20140009号<span>京公网安备：11010602030054号</span></p>
 	</div>
+
+	<script type="text/javascript">
+		function put(){
+			var phone = $('#phone').val();
+			//alert(phone);
+			$.post('{{ url("login/yanzheng") }}',{'_token':'{{csrf_token()}}','phone': phone}, function(data){
+				alert(data);
+			});
+		}
+	</script>
 </body>
 </html>

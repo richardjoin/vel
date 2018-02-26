@@ -64,6 +64,8 @@ Route::resource('/login/ldl','home\LoginController@ldl');
 Route::resource('/login/register','home\LoginController@create');
 //注册验证
 Route::resource('/login/store', 'home\LoginController@store');
+//手机短信验证
+Route::resource('/login/yanzheng', 'home\LoginController@yanzheng');
 //修改密码
 Route::resource('/login/password','home\LoginController@pass');
 //验证码

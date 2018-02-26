@@ -8,6 +8,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 
+//短信
+use Flc\Dysms\Client;
+use Flc\Dysms\Request\SendSms;
+
 use Gregwar\Captcha\CaptchaBuilder;
 use App\model\user;
 use Session;
@@ -66,10 +70,7 @@ class LoginController extends Controller
     {
         $arr = $request->except('_token');
         //dd($arr);
-        //判断验证码是否正确
-        if(session('code')!==$res['code']){
-            return view('homes/login/index')->with('msg','验证码错误！');
-        }
+        
         //判断两次密码是否输入正确
         if($arr['pwd']!==$arr['password']){
             return redirect('login/register');
@@ -83,6 +84,29 @@ class LoginController extends Controller
         }else{
             return back()->with('xxx');
         }
+    }
+
+    public function yanzheng(Request $request)
+    {
+        $phone = $request->input('phone');
+        //return $phone;
+        //短信验证
+        $config = [
+            'accessKeyId'    => env('accessKeyId'),
+            'accessKeySecret' => env('accessKeySecret'),
+        ];
+
+        $client  = new Client($config);
+        $sendSms = new SendSms;
+        
+        
+        $sendSms->setPhoneNumbers($phone);
+        $sendSms->setSignName('最博客');
+        $sendSms->setTemplateCode('SMS_123738445');
+        $sendSms->setTemplateParam(['code' => rand(100000, 999999)]);
+        //$sendSms->setOutId('demo');
+
+        print_r($client->execute($sendSms));
     }
 
     //忘记密码
