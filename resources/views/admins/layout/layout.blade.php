@@ -216,26 +216,10 @@
                         </a>
                         <ul class="tpl-left-nav-sub-menu" style="display: block;">
                             <li>
-                                <!-- <a href="{{ url('admin/amaze') }}">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>Amaze UI 表单</span>
-                                    <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                                    
-                                <a href="{{ url('admin/line') }}">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>线条表单</span>
-                                </a> -->
-								
 								<a href="{{ url('admin/auth') }}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>用户权限管理</span>
                                 </a>
-								
-								<!-- <a href="{{ url('admin/atm') }}">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>广告管理</span>
-                                </a> -->
                             </li>
                         </ul>
                     </li>
@@ -248,21 +232,6 @@
                         </a>
                         <ul class="tpl-left-nav-sub-menu" style="display: block;">
                             <li>
-                                <!-- <a href="{{ url('admin/amaze') }}">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>Amaze UI 表单</span>
-                                    <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                    
-                                <a href="{{ url('admin/line') }}">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>线条表单</span>
-                                </a>
-                                
-                                <a href="{{ url('admin/auth') }}">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>用户权限管理</span>
-                                </a> -->
                                 
                                 <a href="{{ url('admin/atm') }}">
                                     <i class="am-icon-angle-right"></i>

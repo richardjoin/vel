@@ -10,7 +10,7 @@ class user_rank extends Model
 
 	public $timestamps = false; 
 
-    protected $fillable = ['rank_id','user_rank_id','rank_mark','rank_name'];
+    protected $fillable = ['rank_id','user_id','rank_mark','rank_name'];
     
 	
     /*public function user_login()
@@ -19,6 +19,6 @@ class user_rank extends Model
     }*/
     public function user()
     {
-        return $this->hasMany('App\Model\user','id','user_rank_id');
+        return $this->hasMany('App\Model\user','id','user_id');
     }
 }
