@@ -18,11 +18,11 @@ class indexController extends Controller
     public function index()
     {
         //一张表格的数据
-        //$res = user::all();
+        $res = user::all();
         //1对1
         //$res = user::find(1)->user_login()->value('login_name');
-        $res = user::all();
-        //var_dump($res);
+       
+        //dd($res);
         return view('admins/user/index',['res'=>$res]);
     }
 
