@@ -33,7 +33,7 @@ class atmController extends Controller
         $res = ad::create($arr);
         // 把添加的变成array
         $res = $res->toArray();
-        dd($res);
+        //dd($res);
         if($res){
             return redirect('admin/atm');
         }else{
@@ -94,20 +94,8 @@ class atmController extends Controller
     public function destroy($id) //删除一条友情链接
     {
 
-        $del = ad::where('ad_id',$id)->delete();
-        if($del)
-        return ['flag'=>0,'msg'=>'数据删除成功！'];
-        return ['flag'=>1,'msg'=>'数据删除失败！'];  
-
+        $res = ad::where('ad_id',$id)->delete();
+        
+        return $res;
     }
-
-   public function order(){
-        if($input=Input::all()) {
-        $link = ad::find($input['ad_id']);
-        $link->ad_order = $input['ad_order'];
-        if($link->update())
-         return ['flag'=>0,'msg'=>'数据更新成功！'];
-         return ['flag'=>1,'msg'=>'数据更新失败！'];
-        }
- 	}
 }

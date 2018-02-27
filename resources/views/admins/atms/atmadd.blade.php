@@ -24,6 +24,18 @@
                                     </div>
                                 </div>
                                 <div class="am-form-group">
+                                    <label for="user-name" class="am-u-sm-3 am-form-label">链接邮箱</label>
+                                    <div class="am-u-sm-9">
+                                        <input name="link_email" type="text" id="user-name">
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="user-name" class="am-u-sm-3 am-form-label">联系方式</label>
+                                    <div class="am-u-sm-9">
+                                        <input name="link_phone" type="text" id="user-name">
+                                </div>
+                                </div>
+                                <div class="am-form-group">
                                     <div class="am-u-sm-9 am-u-sm-push-3">
                                         <button type="submit" class="am-btn am-btn-primary">保存</button>
                                     </div>

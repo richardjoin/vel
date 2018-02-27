@@ -17,8 +17,6 @@
                             <div class="am-btn-toolbar">
                                 <div class="am-btn-group am-btn-group-xs">
                                     <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> <a href="{{ url('admin/atm/create') }}">新增广告</a></button>
-                                    <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除选中广告</button>
-									<button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 广告位管理</button>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +55,7 @@
                                                 <div class="am-btn-toolbar">
                                                     <div class="am-btn-group am-btn-group-xs">
                                                         <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> <a href="{{ url('admin/atm/'.$v->ad_id.'/edit') }}">编辑</a></button>
-                                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> <a onClick="del({{$v->ad_id}}, this)">删除</a></button>
+                                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> <a onClick="del({{$v->ad_id}}, this)")>删除</a></button>
                                                     </div>
                                                 </div>
                                             </td>
@@ -86,6 +84,27 @@
     <script src="/admins/js/jquery.min.js"></script>
     <script src="/admins/js/amazeui.min.js"></script>
     <script src="/admins/js/app.js"></script>
+    <script src="/layer/layer.js"></script>
+    <script type="text/javascript">
+
+            function del(id, del){
+                
+                //alert(del);
+                layer.confirm('你确定要删除吗？', {
+                    btn:['确定','取消']
+                    },function(){
+                        //alert(id);
+                        $.post('{{url("admin/atm")}}/'+id,{'_token':'{{csrf_token()}}','_method':'delete'},function(data){
+                            if(data == 1){
+                                layer.msg('删除成功');
+                                del.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(del.parentNode.parentNode.parentNode.parentNode.parentNode);
+                            }else{
+                                layer.msg('删除失败');
+                            }
+                        });
+                    })
+            }
+    </script>
 </body>
 
 </html>
