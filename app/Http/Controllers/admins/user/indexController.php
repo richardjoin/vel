@@ -54,7 +54,7 @@ class indexController extends Controller
         if($res){
             return redirect('admin/user');
         }else{
-            return back()->with('xxx');
+            return view('admins/user/add');
         }
 
     }
@@ -96,7 +96,7 @@ class indexController extends Controller
         $res = $request->except('_method','_token');
         $arr = user::where('id',$id)->update($res);
         //dd($arr);
-        if($res){
+        if($arr){
             return redirect('admin/user');
         }else{
             return back()->with('error',"修改失败！！！！！！");

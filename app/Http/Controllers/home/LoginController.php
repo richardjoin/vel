@@ -71,6 +71,11 @@ class LoginController extends Controller
         $arr = $request->except('_token');
         //dd($arr);
         
+        //判断验证码是否正确
+        if(session('phone')!==$arr['code']){
+            return view('homes/login/register')->with('msg','验证码错误！');
+        }
+
         //判断两次密码是否输入正确
         if($arr['pwd']!==$arr['password']){
             return redirect('login/register');
@@ -82,10 +87,10 @@ class LoginController extends Controller
         if($res){
             return redirect('login');
         }else{
-            return back()->with('xxx');
+            return view('homes/login/index');
         }
     }
-
+    //短信验证
     public function yanzheng(Request $request)
     {
         $phone = $request->input('phone');
@@ -103,7 +108,10 @@ class LoginController extends Controller
         $sendSms->setPhoneNumbers($phone);
         $sendSms->setSignName('最博客');
         $sendSms->setTemplateCode('SMS_123738445');
-        $sendSms->setTemplateParam(['code' => rand(100000, 999999)]);
+
+        $rand = rand(100000, 999999);
+        $sendSms->setTemplateParam(['code' => $rand]);
+        session(['phone' => $rand]);
         //$sendSms->setOutId('demo');
 
         print_r($client->execute($sendSms));

@@ -38,7 +38,7 @@
 							<span>*</span>
 						</div>
 						<div class="yzm">
-							<i><img src="/home/login/images/icon03.png"></i><input name="phone" style="width: 200px;" type="text" placeholder="请输入验证码">
+							<i><img src="/home/login/images/icon03.png"></i><input name="code" style="width: 200px;" type="text" placeholder="请输入验证码">
 							<a href="javascript: void(0);" onClick="put()">获取验证码</a>
 						</div>
 						<h4><a href="#">《网站服务协议》</a></h4>

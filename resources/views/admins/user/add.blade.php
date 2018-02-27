@@ -2,34 +2,14 @@
 @section('content')
 
         <div class="tpl-content-wrapper">
-            <div class="tpl-content-page-title">
-                Amaze UI 表单
-            </div>
-            <ol class="am-breadcrumb">
-                <li><a href="#" class="am-icon-home">首页</a></li>
-                <li><a href="#">表单</a></li>
-                <li class="am-active">Amaze UI 表单</li>
-            </ol>
             <div class="tpl-portlet-components">
                 <div class="portlet-title">
                     <div class="caption font-green bold">
                         <span class="am-icon-code"></span> 表单
                     </div>
-                    <div class="tpl-portlet-input tpl-fz-ml">
-                        <div class="portlet-input input-small input-inline">
-                            <div class="input-icon right">
-                                <i class="am-icon-search"></i>
-                                <input type="text" class="form-control form-control-solid" placeholder="搜索..."> </div>
-                        </div>
-                    </div>
-
-
                 </div>
                 <div class="tpl-block ">
-
                     <div class="am-g tpl-amazeui-form">
-
-
                         <div class="am-u-sm-12 am-u-md-9">
                             <form class="am-form am-form-horizontal" action='{{ url("admin/user") }}' method="post">
                             {{ csrf_field() }}

@@ -10,7 +10,7 @@ class article_sort extends Model
 
 	public $timestamps = false; 
     //user_id版主id
-    protected $fillable = ['sort_article_id','user_id','sort_article__name'];
+    protected $fillable = ['sort_article_id','user_id','sort_article_name'];
     
 	
     public function user()

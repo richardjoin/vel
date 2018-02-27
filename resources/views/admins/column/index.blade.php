@@ -21,7 +21,7 @@
                     </div>
                     <div class="am-g">
                         <div class="am-u-sm-12">
-                            <form class="am-form">
+                           
                                 <table class="am-table am-table-striped am-table-hover table-main">
                                     <thead>
                                         <tr>
@@ -40,8 +40,8 @@
                                             <td>
                                                 <div class="am-btn-toolbar">
                                                     <div class="am-btn-group am-btn-group-xs">
-                                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> <a href="{{ url('admin/column/1/edit') }}">编辑</a></button>
-                                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> <a href="{{ url('admin/column/1/destroy') }}">删除</a></button>
+                                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> <a href="{{ url('admin/column/'.$v->sort_article_id.'/edit') }}">编辑</a></button>
+                                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> <a onClick="del({{$v->sort_article_id}}, this)">删除</a></button>
                                                     </div>
                                                 </div>
                                             </td>
@@ -64,7 +64,7 @@
                                     </div>
                                 </div>
                                 <hr>
-                            </form>
+                            
                         </div>
                     </div>
                 </div>
@@ -75,6 +75,27 @@
     <script src="/admins/js/jquery.min.js"></script>
     <script src="/admins/js/amazeui.min.js"></script>
     <script src="/admins/js/app.js"></script>
+    <script src="/layer/layer.js"></script>
+    <script type="text/javascript">
+
+            function del(id, del){
+                
+                //alert(del);
+                layer.confirm('你确定要删除吗？', {
+                    btn:['确定','取消']
+                    },function(){
+                        //alert(id);
+                        $.post('{{url("admin/column")}}/'+id,{'_token':'{{csrf_token()}}','_method':'delete'},function(data){
+                            if(data == 1){
+                                layer.msg('删除成功');
+                                del.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(del.parentNode.parentNode.parentNode.parentNode.parentNode);
+                            }else{
+                                layer.msg('删除失败');
+                            }
+                        });
+                    })
+            }
+    </script>
 </body>
 
 </html>
