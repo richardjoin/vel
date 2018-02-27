@@ -88,8 +88,7 @@ class columnController extends Controller
         if($arr){
             return redirect('admin/column');
         }else{
-            return view('admins/column/edit');
-            //return back()->with('error',"修改失败！！！！！！");
+            return back()->with('error',"修改失败！！！！！！");
         }
     }
 

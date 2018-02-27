@@ -80,7 +80,7 @@
 
             function del(id, del){
                 
-                //alert(del);
+                alert(del);
                 layer.confirm('你确定要删除吗？', {
                     btn:['确定','取消']
                     },function(){

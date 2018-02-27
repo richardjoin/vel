@@ -186,24 +186,15 @@
                         </a>
                         <ul class="tpl-left-nav-sub-menu">
                             <li>
-                                <a href="{{ url('admin/column') }}">
+                                <a href="{{ url('admin/article') }}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>文章分类</span>
                                 </a>
 
-                                <a href="{{ url('admin/article') }}">
+                                <a href="{{ url('admin/sort') }}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>管理文章</span>
                                 </i>
-
-
-
-
-                                       <!--  <a href="form-news-list.html">
-                                           <i class="am-icon-angle-right"></i>
-                                           <span>文字列表</span>
-                                       
-                                       </a> -->
                             </li>
                         </ul>
                     </li>
@@ -216,26 +207,10 @@
                         </a>
                         <ul class="tpl-left-nav-sub-menu" style="display: block;">
                             <li>
-                                <!-- <a href="{{ url('admin/amaze') }}">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>Amaze UI 表单</span>
-                                    <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                                    
-                                <a href="{{ url('admin/line') }}">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>线条表单</span>
-                                </a> -->
-								
 								<a href="{{ url('admin/auth') }}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>用户权限管理</span>
                                 </a>
-								
-								<!-- <a href="{{ url('admin/atm') }}">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>广告管理</span>
-                                </a> -->
                             </li>
                         </ul>
                     </li>
@@ -248,22 +223,6 @@
                         </a>
                         <ul class="tpl-left-nav-sub-menu" style="display: block;">
                             <li>
-                                <!-- <a href="{{ url('admin/amaze') }}">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>Amaze UI 表单</span>
-                                    <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                    
-                                <a href="{{ url('admin/line') }}">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>线条表单</span>
-                                </a>
-                                
-                                <a href="{{ url('admin/auth') }}">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>用户权限管理</span>
-                                </a> -->
-                                
                                 <a href="{{ url('admin/atm') }}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>广告管理</span>
@@ -271,12 +230,10 @@
                             </li>
                         </ul>
                     </li>
-
                     <li class="tpl-left-nav-item">
                         <a href="{{ url('/admin/login') }}" class="nav-link tpl-left-nav-link-list">
                             <i class="am-icon-key"></i>
                             <span>登录</span>
-
                         </a>
                     </li>
                 </ul>

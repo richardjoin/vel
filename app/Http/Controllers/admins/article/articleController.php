@@ -60,7 +60,7 @@ class articleController extends Controller
     public function edit($id)
     {
         //显示修改页面
-        return view('admins/column/edit');
+        return view('admins/article/edit');
     }
 
     /**
