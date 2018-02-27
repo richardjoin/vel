@@ -44,9 +44,8 @@ Route::group(['prefix' => 'admin', 'middleware'=>'logins'], function(){
 
 
 	// 权限管理主页面
-	Route::resource('/auth', 'admins\auth\authController@auth');
+	Route::resource('/auth', 'admins\auth\authController');
 	// 添加权限 与 修改权限 页面
-	Route::resource('/authx', 'admins\auth\authController@authx');
 
 
 	// 广告管理
