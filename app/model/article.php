@@ -17,14 +17,11 @@ class article extends Model
     {
         return $this->hasOne('App\Model\user','id','user_id');
     }
-    public function sort_article_id()
-    {
-        return $this->hasOne('App\Model\article_sort','sort_article_id','sort_article_id');
-    }
+    
 
     public function article_sort()
     {
-        return $this->hasOne('App\Model\article_sort','sort_article_id','type_id');
+        return $this->hasOne('App\Model\article_sort','sort_article_id','sort_article_id');
     }
   /*  public function article_sort()
     {

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\model\article;
 
 class articleController extends Controller
 {
@@ -16,39 +17,8 @@ class articleController extends Controller
      */
     public function index()
     {
-        return view('admins/article/article');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('admins/article/add');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //判断添加是否成功
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        $res = article::all();
+        return view('admins/article/article',['res'=>$res]);
     }
 
     /**
@@ -59,8 +29,8 @@ class articleController extends Controller
      */
     public function edit($id)
     {
-        //显示修改页面
-        return view('admins/article/edit');
+        $res = article::where('article_id',$id)->first();
+        return view('admins/article/articleedit',['res'=>$res]);
     }
 
     /**
@@ -72,17 +42,7 @@ class articleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //判断是否修改成功
+        //
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //删除
-    }
+    
 }

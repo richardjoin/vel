@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\model\article;
 
 class sortController extends Controller
 {
@@ -16,7 +17,7 @@ class sortController extends Controller
      */
     public function index()
     {
-        //
+        return view('admins/article/sort');
     }
 
     /**
@@ -26,7 +27,7 @@ class sortController extends Controller
      */
     public function create()
     {
-        //
+        return view('admins/article/add');
     }
 
     /**
@@ -37,7 +38,7 @@ class sortController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //判断添加是否成功
     }
 
     /**
@@ -59,7 +60,8 @@ class sortController extends Controller
      */
     public function edit($id)
     {
-        //
+        //显示修改页面
+        return view('admins/article/edit');
     }
 
     /**
@@ -71,7 +73,7 @@ class sortController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //判断是否修改成功
     }
 
     /**
@@ -82,6 +84,6 @@ class sortController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //删除
     }
 }

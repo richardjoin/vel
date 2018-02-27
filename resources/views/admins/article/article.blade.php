@@ -2,19 +2,21 @@
 @section('content')
 
 
+
+
         <div class="tpl-content-wrapper">
             <div class="tpl-content-page-title">
-                Amaze UI 表单
-            </div>
+                Amaze UI 文字列表
+            </div>  
             <ol class="am-breadcrumb">
                 <li><a href="#" class="am-icon-home">首页</a></li>
-                <li><a href="#">表单</a></li>
-                <li class="am-active">Amaze UI 表单</li>
+                <li><a href="#">Amaze UI CSS</a></li>
+                <li class="am-active">文字列表</li>
             </ol>
-            <div class="tpl-portlet-components" style="height: 500px;">
+            <div class="tpl-portlet-components">
                 <div class="portlet-title">
                     <div class="caption font-green bold">
-                        <span class="am-icon-code"></span> 表单
+                        <span class="am-icon-code"></span> 列表
                     </div>
                 </div>
                 <div class="tpl-block">
@@ -22,138 +24,74 @@
                         <div class="am-u-sm-12 am-u-md-3">
                             <div class="am-form-group">
                                 <select data-am-selected="{btnSize: 'sm'}">
-                          <option value="option1">所有类别</option>
-                          <option value="option2">IT业界</option>
-                          <option value="option3">数码产品</option>
-                          <option value="option3">笔记本电脑</option>
-                          <option value="option3">平板电脑</option>
-                          <option value="option3">只能手机</option>
-                          <option value="option3">超极本</option>
-                        </select>
+                                  <option value="option1">所有类别</option>
+                                  <option value="option2">IT业界</option>
+                                  <option value="option3">数码产品</option>
+                                  <option value="option3">笔记本电脑</option>
+                                  <option value="option3">平板电脑</option>
+                                  <option value="option3">只能手机</option>
+                                  <option value="option3">超极本</option>
+                                </select>
                             </div>
                         </div>
                     </div>
-
-                    <ul class="tpl-task-list">
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> Amaze UI Icon 组件目前使用了 Font Awesome </span>
-                                <span class="label label-sm label-success">技术部</span>
-                                <span class="task-bell">
-                                            <i class="am-icon-bell-o"></i>
-                                        </span>
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
+                    <div class="am-g">
+                        <div class="tpl-table-images">
+                            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                               <table class="am-table am-table-striped am-table-hover table-main">
+                                    <thead>
+                                        <tr>
+                                            <th class="table-check"><input type="checkbox" class="tpl-table-fz-check"></th>
+                                            <th class="table-id">ID</th>
+                                            <th class="table-title">文章标题</th>
+                                            <th class="table-type">所属栏目</th>
+                                            <th class="table-set">更改分类</th>
+                                        </tr>
+                                    </thead>
+                                @foreach($res as $v)
+                                    <div class="tpl-table-images-content-block">
+                                        <tbody>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="am-hide-sm-only">{{$v->article_id}}</td>
+                                            <td class="am-hide-sm-only">{{$v->article_name}}</td>
+                                            <td class="am-hide-sm-only">{{$v->sort_article_id}}</td>
+                                            <td>
+                                                <div class="am-btn-group am-btn-group-xs tpl-edit-content-btn">
+                                                <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-edit"></span> <a href="{{ url('admin/article/'.$v->article_id.'/edit') }}">更改分类</a></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    </div>
+                                @endforeach
+                                </table>
+                                <div class="am-cf">
+                                    <div class="am-fr">
+                                        <ul class="am-pagination tpl-pagination">
+                                            <li class="am-disabled"><a href="#">«</a></li>
+                                            <li class="am-active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#" >3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li><a href="#">»</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
-                        </li>
-
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 在 data-am-dropdown 里指定要适应到的元素，下拉内容的宽度会设置为该元素的宽度。当然可以直接在 CSS 里设置下拉内容的宽度。 </span>
-                                <span class="label label-sm label-danger">运营</span>
-
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 使用 LESS： 通过设置变量 @fa-font-path 覆盖默认的值，如 @fa-font-path: "../fonts";。这个变量定义在 icon.less 里。 </span>
-                                <span class="label label-sm label-warning">市场部</span>
-
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-
-                        
-                    </ul>
+                        </div>
+                    </div>
                 </div>
-
+                <div class="tpl-alert"></div>
             </div>
-
-
         </div>
-
     </div>
-
-
     <script src="/admins/js/jquery.min.js"></script>
     <script src="/admins/js/amazeui.min.js"></script>
     <script src="/admins/js/app.js"></script>
 </body>
 
 </html>
+    
 @endsection
