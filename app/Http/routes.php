@@ -47,9 +47,7 @@ Route::group(['prefix' => 'admin', 'middleware'=>'logins'], function(){
 
 
 	// 广告管理
-	Route::resource('/atm', 'admins\atms\atmController@atm');
-	// 添加广告页面
-	Route::resource('/atmadd', 'admins\atms\atmController@atmadd');
+	Route::resource('/atm', 'admins\atms\atmController');
 });
 //==================================================================
 

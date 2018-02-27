@@ -21,7 +21,7 @@ class indexController extends Controller
         //$res = user::all();
         //1对1
         //$res = user::find(1)->user_login()->value('login_name');
-        $res = user::find(1)->get();
+        $res = user::all();
         //var_dump($res);
         return view('admins/user/index',['res'=>$res]);
     }
