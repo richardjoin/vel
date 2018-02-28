@@ -14,25 +14,25 @@
             <div class="tpl-portlet-components">
 
                 <div class="tpl-block">
+            
                     <div class="am-g">
                         <div class="am-u-sm-12 am-u-md-3">
-                            <div class="am-form-group">
-              查找用户权限 : &nbsp <select data-am-selected="{btnSize: 'sm'}">
-              <option disabled="disabled">-- 请选择 --</option>
-              <option >普通用户</option>
-              <option >管理员</option>
-              <option >超级管理员</option>
-            </select>
+                           <div class="am-u-sm-12 am-u-md-6">
+                            <div class="am-btn-group am-btn-group-xs">
+                                    <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> <a href="{{ url('admin/auth/create') }}">新增权限</a></button>
+                                </div>
+                            <div class="am-btn-toolbar">
                             </div>
                         </div>
-                        <div class="am-u-sm-12 am-u-md-3">
+                        </div>
+                      <!--   <div class="am-u-sm-12 am-u-md-3">
                             <div class="am-input-group am-input-group-sm">
                                 <input type="text" class="am-form-field">
                                 <span class="am-input-group-btn">
             <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" type="button"></button>
           </span>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="am-g">
                         <div class="am-u-sm-12">
@@ -41,9 +41,9 @@
                                         <tr>
                                             <th class="table-check"><input type="checkbox" class="tpl-table-fz-check"></th>
                                             <th class="table-id">ID</th>
-                                            <<!-- th class="table-author am-hide-sm-only">用户名</th> -->
-											<th class="table-auth">权限</th>
-                                            <th class="table-date am-hide-sm-only">最后修改日期</th>
+                                            <!-- th class="table-author am-hide-sm-only">用户名</th> -->
+											<th class="table-date am-hide-sm-only">权限</th>
+                                            <!-- <th class="table-date am-hide-sm-only">最后修改日期</th> -->
                                             <th class="table-set">操作</th>
                                         </tr>
                                        
@@ -55,11 +55,11 @@
                                             <td>{{ $v->rank_id }}</td>
                                           <!--   <td class="am-hide-sm-only">{{ $v->name }}</td>  -->                                  
 											<td class="am-hide-sm-only">{{ $v->rank_name }}</td>
-                                            <td class="am-hide-sm-only">{{ $v->rank_time }}</td>
+                                        <!--     <td class="am-hide-sm-only">{{ $v->rank_time }}</td> -->
                                             <td>
                                                 <div class="am-btn-toolbar">
                                                     <div class="am-btn-group am-btn-group-xs">
-                                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><a href="{{ url('admin/auth/create') }}">添加</a></button>
+                                                        <!-- <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><a href="{{ url('admin/auth/create') }}">添加</a></button> -->
                                                         <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><a href="{{ url('admin/auth/'.$v->rank_id.'/edit') }}">编辑</a></button>
                                                         <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><a onClick="del({{$v->rank_id}}, this)")>删除</a></button>
                                                     </div>
