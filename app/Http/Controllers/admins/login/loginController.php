@@ -44,8 +44,7 @@ class loginController extends Controller
         session(['id'=>$login->id]);
         //dd($login->password);
         if($login->name == $res['name'] && $login->password == $res['pwd']){
-
-        	return redirect('admin/user');
+        	return redirect('admin');
         }
         return redirect('admin/login');
     }

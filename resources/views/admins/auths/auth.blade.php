@@ -1,9 +1,6 @@
 @extends('admins/layout/layout')
 @section('content')
 
-
-
-
         <div class="tpl-content-wrapper">
             <div class="tpl-content-page-title">
                 用户权限管理中心
@@ -12,9 +9,7 @@
                 <li><a href="#" class="am-icon-home">权限管理</a></li>
             </ol>
             <div class="tpl-portlet-components">
-
                 <div class="tpl-block">
-            
                     <div class="am-g">
                         <div class="am-u-sm-12 am-u-md-3">
                            <div class="am-u-sm-12 am-u-md-6">
@@ -25,14 +20,6 @@
                             </div>
                         </div>
                         </div>
-                      <!--   <div class="am-u-sm-12 am-u-md-3">
-                            <div class="am-input-group am-input-group-sm">
-                                <input type="text" class="am-form-field">
-                                <span class="am-input-group-btn">
-            <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" type="button"></button>
-          </span>
-                            </div>
-                        </div> -->
                     </div>
                     <div class="am-g">
                         <div class="am-u-sm-12">
@@ -59,7 +46,6 @@
                                             <td>
                                                 <div class="am-btn-toolbar">
                                                     <div class="am-btn-group am-btn-group-xs">
-                                                        <!-- <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><a href="{{ url('admin/auth/create') }}">添加</a></button> -->
                                                         <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><a href="{{ url('admin/auth/'.$v->rank_id.'/edit') }}">编辑</a></button>
                                                         <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><a onClick="del({{$v->rank_id}}, this)")>删除</a></button>
                                                     </div>
@@ -69,32 +55,13 @@
                                     </tbody>
                                      @endforeach
                                 </table>
-                                <div class="am-cf">
-
-                                    <div class="am-fr">
-                                        <ul class="am-pagination tpl-pagination">
-                                            <li class="am-disabled"><a href="#">«</a></li>
-                                            <li class="am-active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li><a href="#">»</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
                                 <hr>
-
-                        
                         </div>
-
                     </div>
                 </div>
                 <div class="tpl-alert"></div>
             </div>
-
         </div>
-
     </div>
 
 

@@ -203,9 +203,9 @@
                         <a href="javascript: void(0);" class="nav-link tpl-left-nav-link-list">
                             <i class="am-icon-wpforms"></i>
                             <span>权限管理</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                         </a>
-                        <ul class="tpl-left-nav-sub-menu" style="display: block;">
+                        <ul class="tpl-left-nav-sub-menu" style="display: none;">
                             <li>
 								<a href="{{ url('admin/auth') }}">
                                     <i class="am-icon-angle-right"></i>
@@ -219,9 +219,9 @@
                         <a href="javascript: void(0);" class="nav-link tpl-left-nav-link-list">
                             <i class="am-icon-wpforms"></i>
                             <span>广告管理</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                         </a>
-                        <ul class="tpl-left-nav-sub-menu" style="display: block;">
+                        <ul class="tpl-left-nav-sub-menu" style="display: none;">
                             <li>
                                 <a href="{{ url('admin/atm') }}">
                                     <i class="am-icon-angle-right"></i>
@@ -229,13 +229,13 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li><!-- 
                     <li class="tpl-left-nav-item">
                         <a href="{{ url('/admin/login') }}" class="nav-link tpl-left-nav-link-list">
                             <i class="am-icon-key"></i>
                             <span>登录</span>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
