@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\admins\article;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+
+
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -38,9 +41,28 @@ class sortController extends Controller
      */
     public function store(Request $request)
     {
-        //判断添加是否成功
+        
     }
 
+    public function upload(Request $request)
+    {
+        $file = $request->file('file_upload'); // 图片缓存路径
+        //dd($file);
+        // 获取文件路径
+        $transverse_pic = $file->getRealPath();
+        $contents = file_get_contents($transverse_pic);
+        //初始化
+        $disk = \Storage::disk('qiniu');
+
+        // 获取后缀名
+        $postfix = $file->getClientOriginalExtension();
+        $fileName = md5(time().rand(1000,9999)).'.'.$postfix;
+
+        //上传到qiniu
+        $bool = $disk->put('photo/'.$fileName,$contents);
+
+        return $fileName;
+    }
     /**
      * Display the specified resource.
      *

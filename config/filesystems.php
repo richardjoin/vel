@@ -80,6 +80,19 @@ return [
             'url_type'  => 'publicURL',
         ],
 
+        'qiniu' => [
+            'driver'  => 'qiniu',
+            'domains' => [
+                'default'   => 'os4vho7yf.bkt.clouddn.com' ,
+                
+                ],
+            'access_key'=> 'Ifoco16AKdjrj1QJt-5ABT-RIrSfhEE_-_H8yus8',  //AccessKey
+            'secret_key'=> 'GSQIPcQdwo7Pq77j8MukovtW6DtgOGccsMuiG0t7',  //SecretKey
+            'bucket'    => 'jenyl',  //Bucket(存储空间)名字
+            'notify_url'=> '',  //持久化处理回调地址
+            'access'    => 'public'  //空间访问控制 public 或 private
+        ],
+
     ],
 
 ];
