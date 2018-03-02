@@ -1,20 +1,11 @@
 @extends('/admins/layout/layout')
 @section('content')
 
-
         <div class="tpl-content-wrapper">
-            <div class="tpl-content-page-title">
-                Amaze UI 表单
-            </div>
-            <ol class="am-breadcrumb">
-                <li><a href="#" class="am-icon-home">首页</a></li>
-                <li><a href="#">表单</a></li>
-                <li class="am-active">Amaze UI 表单</li>
-            </ol>
-            <div class="tpl-portlet-components" style="height: 500px;">
+            <div class="tpl-portlet-components">
                 <div class="portlet-title">
                     <div class="caption font-green bold">
-                        <span class="am-icon-code"></span> 表单
+                        <span class="am-icon-code"></span> 栏目列表
                     </div>
                 </div>
                 <div class="tpl-block">
@@ -22,72 +13,93 @@
                         <div class="am-u-sm-12 am-u-md-6">
                             <div class="am-btn-toolbar">
                                 <div class="am-btn-group am-btn-group-xs">
-                                    <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> <a href="{{ url('admin/sort/create') }}">新增文章</a></button>
+                                    <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> <a href="{{ url('admin/sort/create') }}">新增</a></button>
                                 </div>
                             </div>
                         </div>
-                        <div class="am-u-sm-12 am-u-md-3">
-                            <div class="am-input-group am-input-group-sm">
-                                <input type="text" class="am-form-field">
-                                <span class="am-input-group-btn">
-                                    <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" type="button"></button>
-                                </span>
-                            </div>
+                        
+                    </div>
+                    <div class="am-g">
+                        <div class="am-u-sm-12">
+                           
+                                <table class="am-table am-table-striped am-table-hover table-main">
+                                    <thead>
+                                        <tr>
+                                            <th class="table-check"><input type="checkbox" class="tpl-table-fz-check"></th>
+                                            <th class="table-id">ID</th>
+                                            <th class="table-title">栏目名称</th>
+                                            <th class="table-set">操作</th>
+                                        </tr>
+                                    </thead>
+                               
+                                    <tbody>
+                              
+                                        <tr>
+                                         @foreach($arr as $v)
+                                            <td><input type="checkbox"></td>
+                                            <td>{{$v->article_id}}</td>
+                                            <td>{{$v->article_name}}</td>
+                                            <td>
+                                                <div class="am-btn-toolbar">
+                                                    <div class="am-btn-group am-btn-group-xs">
+                                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> <a href="{{ url('admin/sort/'.$v->article_id.'/edit') }}">编辑</a></button>
+                                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> <a onClick="del({{$v->article_id}}, this)">删除</a></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                @endforeach
+                                    </tbody>
+                                </table>
+                                <div class="am-cf">
+
+                                    <div class="am-fr">
+                                        <ul class="am-pagination tpl-pagination">
+                                            <li class="am-disabled"><a href="#">«</a></li>
+                                            <li class="am-active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li><a href="#">»</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <hr>
+                            
                         </div>
                     </div>
-                    <ul class="tpl-task-list">
-                @foreach($arr as $v)
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test">
-                            </div>
-                            <div class="task-title">
-                                <span class="task-title-sp">{{ $v->article_name }}</span>
-                                <span class="label label-sm label-success">
-                            @foreach($res as $vv)
-                @if ($v->sort_article_id == $vv->sort_article_id)
-                                        {{ $vv->sort_article_name }}
-                @endif
-                            @endforeach
-                                </span>
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-                @endforeach
-                    </ul>
                 </div>
+                <div class="tpl-alert"></div>
             </div>
         </div>
     </div>
-
-
     <script src="/admins/js/jquery.min.js"></script>
     <script src="/admins/js/amazeui.min.js"></script>
     <script src="/admins/js/app.js"></script>
+    <script src="/layer/layer.js"></script>
+    <script type="text/javascript">
+
+            function del(id, del){
+                
+                alert(del);
+                layer.confirm('你确定要删除吗？', {
+                    btn:['确定','取消']
+                    },function(){
+                        //alert(id);
+                        $.post('{{url("admin/sort")}}/'+id,{'_token':'{{csrf_token()}}','_method':'delete'},function(data){
+                            if(data == 1){
+                                layer.msg('删除成功');
+                                del.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(del.parentNode.parentNode.parentNode.parentNode.parentNode);
+                            }else{
+                                layer.msg('删除失败');
+                            }
+                        });
+                    })
+            }
+    </script>
 </body>
 
 </html>
+
 @endsection
