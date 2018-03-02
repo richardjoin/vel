@@ -80,8 +80,7 @@
                                             <td>
                                                 <div class="am-btn-group am-btn-group-xs tpl-edit-content-btn">
                                                 <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-edit"></span> <a href="{{ url('admin/user/'.$v->id.'/edit') }}">编辑</a></button>
-                                                
-                                                <a onClick="del({{$v->id}})" type="button" class="am-btn am-btn-default am-btn-danger">删除</a>
+                                                <a onClick="del({{$v->id}}, this)" type="button" class="am-btn am-btn-default am-btn-danger">删除</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -110,23 +109,21 @@
                 <div class="tpl-alert"></div>
             </div>
         </div>
-
     </div>
-
-
     <script src="/admins/js/jquery.min.js"></script>
     <script src="/admins/js/amazeui.min.js"></script>
     <script src="/admins/js/app.js"></script>
     <script src="/layer/layer.js"></script>
     <script type="text/javascript">
 
-            function del(id){
+            function del(id, dels){
                 layer.confirm('你确定要删除吗？', {
                     btn:['确定','取消']
                     },function(){
                         $.post('{{url("admin/user")}}/'+id,{'_token':'{{csrf_token()}}','_method':'delete'},function(data){
                             if(data == 1){
                                 layer.msg('删除成功');
+                                dels.parentNode.parentNode.parentNode.parentNode.removeChild(dels.parentNode.parentNode.parentNode);
                             }else{
                                 layer.msg('删除失败');
                             }

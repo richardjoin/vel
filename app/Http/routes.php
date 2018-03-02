@@ -31,7 +31,12 @@ Route::group(['prefix' => 'admin', 'middleware'=>'logins'], function(){
 	Route::resource('/column', 'admins\column\columnController');
 
 	//文章管理
+	//文章分类
 	Route::resource('/article', 'admins\article\articleController');
+	//管理文章
+	Route::resource('/sort', 'admins\article\sortController');
+	Route::post('/sort/store', 'admins\article\sortController@store');
+	Route::post('/sort/upload', 'admins\article\sortController@upload');
 
 	// 点击显示添加用户表单页面
 	Route::resource('/amaze', 'admins\amazeController@amaze');
