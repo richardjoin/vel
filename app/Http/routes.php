@@ -70,6 +70,7 @@ Route::get('/login/code', 'home\LoginController@code');
 
 //前台(关于我)
 Route::get('/about','home\AboutController@index');
+Route::get('/center','home\CenterController@index');
 //前台(成长)
 Route::get('/article','home\ArticleController@index');
 //前台(成长文章详情)
