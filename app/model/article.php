@@ -10,7 +10,7 @@ class article extends Model
 
 	public $timestamps = false; 
 
-    protected $fillable = ['article_id','article_name','article_time','article_ip','article_click','sort_article_id','user_id','type_id','article_type','article_content','article_up','article_support'];
+    protected $fillable = ['article_id','article_name','article_time','article_user','article_click','sort_article_id','user_id','type_id','article_type','article_content','article_up','article_support','article_thumb'];
     
 	
     public function user()

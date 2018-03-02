@@ -17,41 +17,39 @@
                     </div>
                 </div>
                 <div class="tpl-block ">
-
                     <div class="am-g tpl-amazeui-form">
-
-
                         <div class="am-u-sm-12 am-u-md-9">
-                            <form action="{{ url('admin/sort/create') }}" method="post" class="am-form am-form-horizontal" id="art_form">
-                            {{ csrf_field() }}
+                            <form action='{{ url("admin/sort/store") }}' method="post" class="am-form am-form-horizontal" id="art_form">
+                                {{ csrf_field() }}
                                 <div class="am-form-group">
                                     <label for="user-name" class="am-u-sm-3 am-form-label">文章标题</label>
                                     <div class="am-u-sm-9">
-                                        <input type="text" id="user-name" placeholder="请输入文章标题">
+                                        <input type="text" name="article_name" id="user-name" placeholder="请输入文章标题">
                                         <small>输入你的文章标题！</small>
                                     </div>
                                 </div>
 
                                 <div class="am-form-group">
-                                    <label for="user-email" class="am-u-sm-3 am-form-label">发布时间</label>
+                                    <label for="user-email" class="am-u-sm-3 am-form-label">文章作者</label>
                                     <div class="am-u-sm-9">
-                                        <input type="text" id="user-email" placeholder="发布时间">
+                                        <input type="text" name="article_user" id="user-name" placeholder="文章作者">
                                     </div>
                                 </div>
 
-                                <div class="am-form-group">
+                                <!-- <div class="am-form-group">
                                     <label for="user-phone" class="am-u-sm-3 am-form-label">文章作者</label>
                                     <div class="am-u-sm-9">
-                                        <select data-am-selected="{btnSize: 'sm'}">
-                                  <option value="option1">作者</option>
-                                  <option value="option2">IT业界</option>
-                                </select>
+                                        <select data-am-selected="{btnSize: 'sm'}" name="article_user">
+                                          <option value="作者">作者</option>
+                                          <option value="IT业界">IT业界</option>
+                                        </select>
                                     </div>
-                                </div>
+                                </div> -->
+
                                 <div class="am-form-group">
                                     <label for="user-weibo" class="am-u-sm-3 am-form-label">上传图片</label>
                                     <div class="am-u-sm-9">
-                                        <input type="hidden" name="art_thumb" id="art_thumb"  value="{{old('art_thumb')}}" >
+                                        <input type="text" name="article_thumb" id="art_thumb"  value="{{old('article_thumb')}}" >
                                         <input type="file" style="position: absolute;width: 300px;height: 250px;opacity: 0;" name="file_upload" id="file_upload" value="">
                                         <p><img style="width: 300px;height: 250px;" src="{{ asset('/1.jpg')}}" alt="" id="img1" style="width:100px" ></p>
                                     </div>
@@ -64,7 +62,7 @@
                         <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/ueditor.all.min.js')}}"> </script>
                         <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/lang/zh-cn/zh-cn.js')}}"></script>
 
-                        <script id="editor" type="text/plain" name="art_content" style="width:860px;height:500px;">
+                        <script id="editor" type="text/plain" name="article_content" style="width:860px;height:500px;">
                             
                         </script>
 
@@ -77,7 +75,8 @@
                             div.edui-combox-body,div.edui-button-body,div.edui-splitbutton-body
                             {overflow: hidden; height:20px;}
                             div.edui-box{overflow: hidden; height:22px;}
-                        </style>                                        <small>250字以内写出你的一生...</small>
+                        </style>
+                        <small>250字以内写出你的一生...</small>
                                     </div>
                                 </div>
                                 
@@ -126,7 +125,7 @@
                 return;
             }
             var formData = new FormData($( "#art_form" )[0]);
-            console.log(formData);
+            //console.log(formData);
             $.ajax({
                 type: "post",
                 url: "{{ url('admin/sort/upload') }}",

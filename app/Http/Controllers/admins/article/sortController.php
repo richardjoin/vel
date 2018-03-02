@@ -41,7 +41,17 @@ class sortController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $arr = $request->except('_token','file_upload');
+        //dd($arr);
+        $res = article::create($arr);
+        //dd($res);
+        //把添加的变成array
+        $res = $res->toArray();
+        if($res){
+            return redirect('admin/sort');
+        }else{
+            return back()->with('error',"修改失败！！！！！！");
+        }
     }
 
     public function upload(Request $request)
