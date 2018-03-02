@@ -34,7 +34,7 @@
 					<a href="#" class="w_logo"></a>
 					<span class="w_header_nav">
 					<ul>
-						<li><a href="{{ url('/') }}" class="active">首页</a></li>
+						<li style="margin-left: 200px;"><a href="{{ url('/') }}" class="active">首页</a></li>
 						<li><a href="{{ url('/center') }}">个人中心</a></li>
 						<li><a href="{{ url('/about') }}">关于</a></li>
 						<li><a href="{{ url('/article') }}">成长</a></li>
@@ -45,12 +45,7 @@
 						<li><a href="{{ url('/login') }}">登录</a></li>
 					</ul>
 				</span>
-					<div class="w_search">
-						<div class="w_searchbox">
-							<input type="text" placeholder="search" />
-							<button>搜索</button>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>
