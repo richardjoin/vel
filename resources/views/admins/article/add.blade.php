@@ -51,7 +51,7 @@
                                 <div class="am-form-group">
                                     <label for="user-weibo" class="am-u-sm-3 am-form-label">上传图片</label>
                                     <div class="am-u-sm-9">
-                                        <input type="text" name="article_thumb" id="art_thumb"  value="{{old('article_thumb')}}" >
+                                        <input type="hidden" name="article_thumb" id="art_thumb"  value="{{old('article_thumb')}}" >
                                         <input type="file" style="position: absolute;width: 300px;height: 250px;opacity: 0;" name="file_upload" id="file_upload" value="">
                                         <p><img style="width: 300px;height: 250px;" src="{{ asset('/1.jpg')}}" alt="" id="img1" style="width:100px" ></p>
                                     </div>

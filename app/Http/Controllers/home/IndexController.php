@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\model\article;
 
 class IndexController extends Controller
 {
@@ -16,8 +17,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-        //
-        return view('homes/sy/index');
+        //index显示文章基本信息
+        $res = article::all();
+        return view('homes/sy/index',['res'=>$res]);
     }
 
     /**
