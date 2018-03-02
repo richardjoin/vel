@@ -34,7 +34,7 @@ class sortController extends Controller
     public function create()
     {
         $res = article_sort::all();
-        return view('admins/article/add',['res'=>$res]);
+        return view('admins/article/sortadd',['res'=>$res]);
     }
 
     /**
@@ -93,8 +93,9 @@ class sortController extends Controller
      */
     public function edit($id)
     {
+        $row = article::where('article_id',$id)->first();
         //显示修改页面
-        return view('admins/article/edit');
+        return view('admins/article/sortedit',['row'=>$row]);
     }
 
     /**
@@ -106,7 +107,18 @@ class sortController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //修改数据
+        $res = $request->except('_method','_token');
+        $arr = article::where('article_id',$id)->update($res);
+        //dd($arr);
+       
+        
         //判断是否修改成功
+        if($arr){
+            return redirect('admin/sort');
+        }else{
+            return back()->with('error',"修改失败！！！！！！");
+        }
     }
 
     /**
@@ -118,5 +130,9 @@ class sortController extends Controller
     public function destroy($id)
     {
         //删除
+
+        $res = article::where('article_id',$id)->delete();
+        
+        return $res;
     }
 }

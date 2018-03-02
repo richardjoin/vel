@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\admins\user;
+namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\model\user;
 
-class indexController extends Controller
+class CenterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +16,8 @@ class indexController extends Controller
      */
     public function index()
     {
-        //一张表格的数据
-        $res = user::all();
-        //1对1
-        //$res = user::find(1)->user_login()->value('login_name');
-          
-        return view('admins/user/index',['res'=>$res]);
+        //
+        return view('homes/center/index');
     }
 
     /**
@@ -32,8 +27,7 @@ class indexController extends Controller
      */
     public function create()
     {
-        //显示添加页面
-        return view('admins/user/add');
+        //
     }
 
     /**
@@ -44,18 +38,7 @@ class indexController extends Controller
      */
     public function store(Request $request)
     {
-        $arr = $request->except('_token');
-        //dd($arr);
-        $res = user::create($arr);
-        //把添加的变成array
-        $res = $res->toArray();
-        //dd($res);
-        if($res){
-            return redirect('admin/user');
-        }else{
-            return view('admins/user/add');
-        }
-
+        //
     }
 
     /**
@@ -77,9 +60,7 @@ class indexController extends Controller
      */
     public function edit($id)
     {
-        $res = user::where('id',$id)->first();
-        //var_dump($res);
-        return view('admins/user/edit',['res'=>$res]);
+        //
     }
 
     /**
@@ -91,15 +72,7 @@ class indexController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //修改数据
-        $res = $request->except('_method','_token');
-        $arr = user::where('id',$id)->update($res);
-        //dd($arr);
-        if($arr){
-            return redirect('admin/user');
-        }else{
-            return back()->with('error',"修改失败！！！！！！");
-        }
+        //
     }
 
     /**
@@ -110,10 +83,6 @@ class indexController extends Controller
      */
     public function destroy($id)
     {
-        $res = user::where('id',$id)->delete();
-        //dd($res);
-        
-        return $res;
-       
+        //
     }
 }
