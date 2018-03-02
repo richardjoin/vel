@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\model\article;
+use App\model\article_sort;
 
 class sortController extends Controller
 {
@@ -20,7 +21,9 @@ class sortController extends Controller
      */
     public function index()
     {
-        return view('admins/article/sort');
+        $arr = article::all();
+        $res = article_sort::all();
+        return view('admins/article/sort',compact('res','arr'));
     }
 
     /**
@@ -30,7 +33,8 @@ class sortController extends Controller
      */
     public function create()
     {
-        return view('admins/article/add');
+        $res = article_sort::all();
+        return view('admins/article/add',['res'=>$res]);
     }
 
     /**
@@ -42,9 +46,7 @@ class sortController extends Controller
     public function store(Request $request)
     {
         $arr = $request->except('_token','file_upload');
-        //dd($arr);
         $res = article::create($arr);
-        //dd($res);
         //把添加的变成array
         $res = $res->toArray();
         if($res){
@@ -57,7 +59,6 @@ class sortController extends Controller
     public function upload(Request $request)
     {
         $file = $request->file('file_upload'); // 图片缓存路径
-        //dd($file);
         // 获取文件路径
         $transverse_pic = $file->getRealPath();
         $contents = file_get_contents($transverse_pic);

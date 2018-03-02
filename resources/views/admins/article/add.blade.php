@@ -35,16 +35,18 @@
                                         <input type="text" name="article_user" id="user-name" placeholder="文章作者">
                                     </div>
                                 </div>
-
-                                <!-- <div class="am-form-group">
-                                    <label for="user-phone" class="am-u-sm-3 am-form-label">文章作者</label>
-                                    <div class="am-u-sm-9">
-                                        <select data-am-selected="{btnSize: 'sm'}" name="article_user">
-                                          <option value="作者">作者</option>
-                                          <option value="IT业界">IT业界</option>
-                                        </select>
+    
+                                    <div class="am-form-group">
+                                        <label for="user-phone" class="am-u-sm-3 am-form-label">所属分类</label>
+                                        <div class="am-u-sm-9">
+                                            <select data-am-selected="{btnSize: 'sm'}" name="sort_article_id">
+                                                <option value="选择分类">选择分类</option>
+                                            @foreach($res as $v)
+                                                <option value="{{$v->sort_article_id}}">{{$v->sort_article_name}}</option>
+                                            @endforeach
+                                            </select>
+                                        </div>
                                     </div>
-                                </div> -->
 
                                 <div class="am-form-group">
                                     <label for="user-weibo" class="am-u-sm-3 am-form-label">上传图片</label>

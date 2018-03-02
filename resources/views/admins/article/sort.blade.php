@@ -36,16 +36,21 @@
                         </div>
                     </div>
                     <ul class="tpl-task-list">
+                @foreach($arr as $v)
                         <li>
                             <div class="task-checkbox">
                                 <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
+                                <input type="checkbox" class="liChild" value="2" name="test">
+                            </div>
                             <div class="task-title">
-                                <span class="task-title-sp"> Amaze UI Icon 组件目前使用了 Font Awesome </span>
-                                <span class="label label-sm label-success">技术部</span>
-                                <span class="task-bell">
-                                            <i class="am-icon-bell-o"></i>
-                                        </span>
+                                <span class="task-title-sp">{{ $v->article_name }}</span>
+                                <span class="label label-sm label-success">
+                            @foreach($res as $vv)
+                @if ($v->sort_article_id == $vv->sort_article_id)
+                                        {{ $vv->sort_article_name }}
+                @endif
+                            @endforeach
+                                </span>
                             </div>
                             <div class="task-config">
                                 <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
@@ -71,6 +76,7 @@
                                 </div>
                             </div>
                         </li>
+                @endforeach
                     </ul>
                 </div>
             </div>
