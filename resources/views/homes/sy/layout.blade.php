@@ -8,6 +8,8 @@
 
 	<link href="./home/sy/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./home/sy/css/common.css" />
+	<link href="home/center/css/um.css" rel="stylesheet">
+  	<link href="home/center/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
 	<link href="./home/sy/img/logo.ico" rel="shortcut icon" />
 	<script src="./home/sy/plugin/jquery.min.js"></script>
 	<script src="./home/sy/plugin/bootstrap/js/bootstrap.min.js"></script>

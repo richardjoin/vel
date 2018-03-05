@@ -33,6 +33,7 @@ class sortController extends Controller
      */
     public function create()
     {
+        //显示添加页面
         $res = article_sort::all();
         return view('admins/article/sortadd',['res'=>$res]);
     }
@@ -45,7 +46,16 @@ class sortController extends Controller
      */
     public function store(Request $request)
     {
+        //添加数据
         $arr = $request->except('_token','file_upload');
+
+        //添加时间
+        $time = date('Y年m月d日');
+        
+        $time = array('article_time' => $time);
+        
+        $arr = array_merge($arr,$time);
+        //dd($arr);
         $res = article::create($arr);
         //把添加的变成array
         $res = $res->toArray();
@@ -55,7 +65,7 @@ class sortController extends Controller
             return back()->with('error',"修改失败！！！！！！");
         }
     }
-
+    //photo/c6c0b68e0ef39a8d37cda42051acc4aa.jpg
     public function upload(Request $request)
     {
         $file = $request->file('file_upload'); // 图片缓存路径

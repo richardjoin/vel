@@ -35,18 +35,25 @@
                                         <input type="text" name="article_user" id="user-name" placeholder="文章作者">
                                     </div>
                                 </div>
-    
-                                    <div class="am-form-group">
-                                        <label for="user-phone" class="am-u-sm-3 am-form-label">所属分类</label>
-                                        <div class="am-u-sm-9">
-                                            <select data-am-selected="{btnSize: 'sm'}" name="sort_article_id">
-                                                <option value="选择分类">选择分类</option>
-                                            @foreach($res as $v)
-                                                <option value="{{$v->sort_article_id}}">{{$v->sort_article_name}}</option>
-                                            @endforeach
-                                            </select>
-                                        </div>
+
+                                <div class="am-form-group">
+                                    <label for="user-email" class="am-u-sm-3 am-form-label">文章简介</label>
+                                    <div class="am-u-sm-9">
+                                        <input type="text" name="article_intro" id="user-name" placeholder="文章简介">
                                     </div>
+                                </div>
+    
+                                <div class="am-form-group">
+                                    <label for="user-phone" class="am-u-sm-3 am-form-label">所属分类</label>
+                                    <div class="am-u-sm-9">
+                                        <select data-am-selected="{btnSize: 'sm'}" name="sort_article_id">
+                                            <option value="选择分类">选择分类</option>
+                                        @foreach($res as $v)
+                                            <option value="{{$v->sort_article_id}}">{{$v->sort_article_name}}</option>
+                                        @endforeach
+                                        </select>
+                                    </div>
+                                </div>
 
                                 <div class="am-form-group">
                                     <label for="user-weibo" class="am-u-sm-3 am-form-label">上传图片</label>

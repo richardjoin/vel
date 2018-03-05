@@ -75,6 +75,7 @@ Route::get('/login/code', 'home\LoginController@code');
 
 //前台(关于我)
 Route::get('/about','home\AboutController@index');
+//个人中心
 Route::get('/center','home\CenterController@index');
 //前台(成长)
 Route::get('/article','home\ArticleController@index');

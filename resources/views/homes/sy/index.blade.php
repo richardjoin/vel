@@ -79,14 +79,15 @@
 													<a class="label label-default">Nginx</a>
 													<a class="label label-default">tomcat负载均衡</a>
 												</p> -->
-												<div class="overView">{!! $v->article_content !!}</div>
-												<p><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">admin</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:852</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:99</span><span class="count"><i class="glyphicon glyphicon-time"></i>2016-08-25</span></p>
+												<!-- <div class="overView">{!! $v->article_content !!}</div> -->
+												<div class="overView">{{ $v->article_intro }}</div>
+												<p><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">{{ $v->article_user }}</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:852</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:99</span><span class="count"><i class="glyphicon glyphicon-time"></i>{{ $v->article_time }}</span></p>
 											</div>
 											<div class="contentImage">
 												<!--<img src="img/slider/67zmaej.png"/>-->
 												<div class="row">
 													<a href="#" class="thumbnail w_thumbnail">
-														<img src="home/sy/img/slider/67zmaej.png" alt="...">
+														<img src="http://os4vho7yf.bkt.clouddn.com/photo/c6c0b68e0ef39a8d37cda42051acc4aa.jpg" alt="...">
 													</a>
 												</div>
 											</div>
@@ -142,33 +143,6 @@
 								<ul class="list-unstyled sidebar">
 									<li>
 										<a href="/post/04928311">排序算法之冒泡排序 － java实现</a>
-									</li>
-									<li>
-										<a href="/post/32097759">快速搭建基于二进制日志文件的 mysql 复制</a>
-									</li>
-									<li>
-										<a href="/post/09196557">web 服务器负载均衡教程，快速搭建高可用服务器集群</a>
-									</li>
-									<li>
-										<a href="/post/20654391">使用 redis 和 spring-session 实现 tomcat、glassfish 等 web 服务器集群 session 共享</a>
-									</li>
-									<li>
-										<a href="/post/41501569">使用 Nginx 实现 tomcat、glassfish 等 web 服务器负载均衡</a>
-									</li>
-									<li>
-										<a href="/post/89658700">mysql 复制（replication）基础概念和应用场景简介</a>
-									</li>
-									<li>
-										<a href="/post/03088922">redis 单节点在 Linux 生产环境的安装和简单配置</a>
-									</li>
-									<li>
-										<a href="/post/05203355">使用 jQuery 的 val() 方法来获取以及设置表单元素值</a>
-									</li>
-									<li>
-										<a href="/post/03120718">使用 jQuery 的 removeProp() 方法来删除元素的特性（property）</a>
-									</li>
-									<li>
-										<a href="/post/37454977">使用 jQuery 的 prop() 方法来获取以及设置元素的特性（property）</a>
 									</li>
 								</ul>
 							</div>

@@ -18,6 +18,7 @@ class IndexController extends Controller
     public function index()
     {
         //index显示文章基本信息
+        //orm区块（查一个字段的所有信息）
         $res = article::all();
         return view('homes/sy/index',['res'=>$res]);
     }
