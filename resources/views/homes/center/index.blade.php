@@ -5,9 +5,12 @@
       	<div id="author-page" style="margin-top: 60px;" class="primary bd clx" role="main">
       		<div class="aside">
     <div class="user-avatar">
-        <a href="http://bbs.hyphp.cn/u/vknjhecxa5gd/op.html">
-            <img src="home/center/image/1.jpg" class="avatar avatar-200" height="200" width="200"></a>
-        <h2>vknjhecxa5gd</h2>
+    	<form action='{{ url("center/upload") }}' method="post" class="am-form am-form-horizontal" id="art_form">
+{{ csrf_field() }}
+        <a href="#"><input type="file" style="position: absolute;left:70px;width: 100px;height: 100px;opacity: 0;" name="file_upload" id="file_upload" value="" >
+            <img src="{{ asset('/1.jpg')}}" class="avatar avatar-200" height="200" width="200" id="img1"></a>
+        </form>
+        <h3>{{ $res['name'] }}</h3>
         <div id="num-info">
             
             <div>
@@ -17,7 +20,7 @@
                 <span class="num">0</span><span class="text">粉丝</span>
             </div>
             <div>
-                <span class="num">0</span><span class="text">文章</span>
+                <span class="num">{{ $arr['user_mark'] }}</span><span class="text">积分</span>
             </div>
             
         </div>
@@ -25,29 +28,21 @@
         </div>
     </div>
     <div class="menus">
-        <ul>
+        <ul style="margin-top: 30px;font-size: 16px;line-height: 35px;">
 
             
-            <li class="tab-index active">
-
-            <a href="http://bbs.hyphp.cn/u/vknjhecxa5gd.html"><i class="fa fa-tachometer"></i>首页中心</a>
+            <li>
+            	<span style="margin-left: -20px;">联系方式：{{ $res['phone'] }}</span>
             </li>
             <li class="tab-post ">
-            <a href="http://bbs.hyphp.cn/u/vknjhecxa5gd/thread.html"><i class="fa fa-cube"></i>我的文章</a>
+            	<span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：{{ ($res['sex']=='m')?'男':'女' }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             </li>
-            <li class="tab-comment ">
-            <a href="http://bbs.hyphp.cn/u/vknjhecxa5gd/post.html"><i class="fa fa-comments"></i>帖子评论</a>
+            <li>
+            	<span>年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：{{ $res['age'] }}&nbsp;&nbsp;岁</span>
             </li>
-                                    <li class="tab-profile ">
-            <a href="http://bbs.hyphp.cn/u/vknjhecxa5gd/log.html"><i class="fa fa-money"></i>流水记录</a>
+            <li>
+            	<span>邮箱：{{ $res['email'] }}</span>
             </li>
-            <li class="tab-profile ">
-            <a href="http://bbs.hyphp.cn/u/vknjhecxa5gd/op.html"><i class="fa fa-cog"></i>编辑资料</a>
-            </li>
-            <li class="tab-message ">
-            <a href="http://bbs.hyphp.cn/u/vknjhecxa5gd/file.html"><i class="fa fa-file"></i>我的文件</a>
-            </li>
-                                                
         </ul>
     </div>
 </div>
@@ -56,17 +51,10 @@
       		<div class="area">
       			<div class="page-wrapper">
       				<div class="dashboard-main">
-
-<!-- 好友系统资源文件 -->
-  <link href="home/center/css/friend.css" rel="stylesheet">
-  <script src="http://bbs.hyphp.cn/public/js/friend.js"></script>
-
-  <script src="home/center/js/sweet-alert.min.js"></script>
-  <link href="home/center/css/alert.css" rel="stylesheet">
   
 <div class="dashboard-header">
 	<p class="sub-title">
-		用户中心 - HYBBS
+		用户中心
 	</p>
 	
 </div>
@@ -79,7 +67,7 @@
 				<i class="fa fa-tasks"></i>
 			</div>
 			<div class="number">
-				0<span>文章作品</span>
+				{{ $row }}<span>文章作品</span>
 			</div>
 			<div class="more">
 				<a href="http://bbs.hyphp.cn/u/vknjhecxa5gd/thread.html">查看更多<i class="fa fa-arrow-circle-right"></i></a>
@@ -122,22 +110,7 @@
 		</ul>
 	</div>
 	
-	<div class="summary">
-		<div class="box">
-			<div class="title">
-				最近发布			</div>
-			<ul>
-                
-			</ul>
-		</div>
-		<div class="box">
-			<div class="title">
-				最近评论			</div>
-			<ul>
-                
-			</ul>
-		</div>
-	</div>
+	
 	
 	<div class="fast-navigation">
 		<div class="nav-title">
@@ -148,10 +121,7 @@
 			<i class="fa fa-pencil-square-o"></i>发布文章</a></li>
 
 						<li><a href="http://bbs.hyphp.cn/u/vknjhecxa5gd/file.html"><i class="fa fa-file-o"></i>我的文件</a></li>
-			<li><a href="http://bbs.hyphp.cn/u/vknjhecxa5gd/op.html"><i class="fa fa-cog"></i>修改资料</a></li>
-			
-			<li><a href="http://bbs.hyphp.cn/user/out.html"><i class="fa fa-power-off"></i>注销登录</a></li>
-						
+			<li><a href="{{ url('center/edit/'.$res->id.'/edit') }}"><i class="fa fa-cog"></i>修改资料</a></li>	
 		</ul>
 	</div>
 	
@@ -161,6 +131,65 @@
 </div>
 </div>
 </div>
-	
+
+	<script src="/admins/js/jquery.min.js"></script>
+	<script src="/layer/layer.js"></script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+       
+        $("#file_upload").change(function (){ 
+            uploadImage();
+        });
+       
+        function uploadImage() {
+            //    判断是否有选择上传文件
+            //    input type file
+            var imgPath = $("#file_upload").val();
+            if (imgPath == "") {
+                alert("请选择上传图片！");
+                return;
+            }
+            //判断上传文件的后缀名
+            var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
+            if (strExtension != 'jpg' && strExtension != 'gif'
+                && strExtension != 'png' && strExtension != 'bmp') {
+                alert("请选择图片文件");
+                return;
+            }
+            var formData = new FormData($( "#art_form" )[0]);
+            //console.log(formData);
+            $.ajax({
+                type: "post",
+                url: "{{ url('/center/upload') }}",
+                data: formData,
+                async: true,
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend:function(){
+                      // 菊花转转图
+                      // $('#img1').attr('src', 'http://img.lanrentuku.com/img/allimg/1212/5-121204193R0-50.gif');
+                      //
+                       a = layer.load();
+                  },
+                success: function(data) {
+
+                    layer.close(a);
+                    $('#img1').attr('src', "http://os4vho7yf.bkt.clouddn.com/photo/" + data + "?imageView2/0/w/500");
+
+                  $('#art_thumb').val(data);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("上传失败，请检查网络后重试");
+                    layer.close(a);
+                    $('#img1').attr('src','http://xxxx.com/1.jpg');
+                }
+            });
+        }
+    </script>
 @endsection
 

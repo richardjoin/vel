@@ -17,12 +17,13 @@ class user extends Model
     {
         return $this->hasOne('App\Model\user_login','uid','id');
     }
-    public function user_rank_id()
+    public function user_rank()
     {
-        return $this->hasOne('App\Model\user_rank_id','rank_id','id');
+        return $this->hasOne('App\Model\user_rank','rank_id','rank_id');
     }
-    public function article()
+    public function user_mark()
     {
-        return $this->hasMany('App\Model\article','uid','id');
+        return $this->hasOne('App\Model\user_mark','user_id','mark_id');
     }
+   
 }

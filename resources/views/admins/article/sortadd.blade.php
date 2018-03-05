@@ -152,8 +152,6 @@
                 success: function(data) {
                     layer.close(a);
                     $('#img1').attr('src', "http://os4vho7yf.bkt.clouddn.com/photo/" + data + "?imageView2/0/w/500");
-
-                  $('#art_thumb').val(data);
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     alert("上传失败，请检查网络后重试");

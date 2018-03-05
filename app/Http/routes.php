@@ -76,7 +76,13 @@ Route::resource('/login/password','home\LoginController@pass');
 Route::get('/login/code', 'home\LoginController@code');
 
 //个人中心
-Route::get('/center','home\CenterController@index');
+Route::resource('/center','home\CenterController@index');
+//修改
+Route::resource('/center/edit','home\CenterController@edit');
+//修改
+Route::resource('/center/update','home\CenterController@update');
+//上传图像
+Route::resource('/center/upload','home\CenterController@upload');
 //前台(成长)
 Route::get('/article','home\ArticleController@index');
 //前台(成长文章详情)
