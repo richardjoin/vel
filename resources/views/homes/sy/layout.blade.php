@@ -36,15 +36,21 @@
 					<a href="#" class="w_logo"></a>
 					<span class="w_header_nav">
 					<ul>
-						<li style="margin-left: 200px;"><a href="{{ url('/') }}" class="active">首页</a></li>
-						<li><a href="{{ url('/center') }}">个人中心</a></li>
+						<li style="margin-left: 100px;"><a href="{{ url('/') }}" class="active">首页</a></li>
+						
 						<li><a href="{{ url('/about') }}">关于</a></li>
 						<li><a href="{{ url('/article') }}">成长</a></li>
 						<li><a href="{{ url('/study') }}">学习</a></li>
 						<li><a href="{{ url('/play') }}">娱乐</a></li>
 						<li><a href="{{ url('/shuoshuo') }}">说说</a></li>
 						<li><a href="{{ url('/liuyan') }}">留言</a></li>
-						<li><a href="{{ url('/login') }}">登录</a></li>
+						@if (empty(session('homeFlag')))
+	                        <li style="color:#eee;margin-top: 0px;">你好,请<a style='text-decoration:none;'  href="{{ url('/login') }}">登录</a></li>;
+	                    @else 
+	                    <li><a href="{{ url('/center') }}">个人中心</a></li>
+	                        <li style="color:#eee;margin-top: 0px;">你好,{{ session('homeUserInfo')}} 
+	                        <a style='text-decoration:none;' href="{{ url('/login/halt') }}">退出</a></li>;
+	                    @endif
 					</ul>
 				</span>
 					

@@ -62,6 +62,8 @@ Route::get('/','home\IndexController@index');
 Route::get('/login','home\LoginController@index');
 //验证登录
 Route::resource('/login/ldl','home\LoginController@ldl');
+//退出
+Route::resource('/login/halt','home\LoginController@halt');
 //注册
 Route::resource('/login/register','home\LoginController@create');
 //注册验证
@@ -73,8 +75,6 @@ Route::resource('/login/password','home\LoginController@pass');
 //验证码
 Route::get('/login/code', 'home\LoginController@code');
 
-//前台(关于我)
-Route::get('/about','home\AboutController@index');
 //个人中心
 Route::get('/center','home\CenterController@index');
 //前台(成长)
@@ -89,5 +89,4 @@ Route::get('/play','home\PlayController@index');
 Route::get('/play/list','home\PlayController@xs');
 //前台(说说)
 Route::get('/shuoshuo','home\ShuoController@index');
-//前台(留言板)
-Route::get('/liuyan','home\LiuyanController@index');
+

@@ -52,12 +52,20 @@ class LoginController extends Controller
         //判断name是否正确
         $user = user::where('name',$res['name'])->first();
         session(['id'=>$user->id]);
-        //dd($login->password);
+        var_dump($user);
         if($user->name == $res['name'] && $user->pwd == $res['pwd']){
-
+            session(['homeFlag' => true ]);
+            session(['homeUserInfo' => $user->name ]);
             return redirect('/');
         }
         return redirect('/login');
+    }
+
+    //退出
+    public function halt()
+    {
+        session(['homeFlag' => false ]);
+        return redirect('/');
     }
 
     //注册
