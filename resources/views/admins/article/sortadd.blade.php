@@ -133,12 +133,12 @@
                 alert("请选择图片文件");
                 return;
             }
-            var formData = new FormData($( "#art_form" )[0]);
-            //console.log(formData);
+            var formdata = new FormData();
+            formdata.append('file', $("#file_upload")[0].files[0]);
             $.ajax({
                 type: "post",
                 url: "{{ url('admin/sort/upload') }}",
-                data: formData,
+                data: formdata,
                 async: true,
                 cache: false,
                 contentType: false,
