@@ -70,7 +70,7 @@
 				{{ $row }}<span>文章作品</span>
 			</div>
 			<div class="more">
-				<a href="http://bbs.hyphp.cn/u/vknjhecxa5gd/thread.html">查看更多<i class="fa fa-arrow-circle-right"></i></a>
+				<a href="#">查看更多<i class="fa fa-arrow-circle-right"></i></a>
 			</div>
 			</li>
 			<li class="photo">
@@ -81,7 +81,7 @@
 				0<span>我的收藏</span>
 			</div>
 			<div class="more">
-				<a href="http://bbs.hyphp.cn/u/vknjhecxa5gd/thread.html">查看更多<i class="fa fa-arrow-circle-right"></i></a>
+				<a href="#">查看更多<i class="fa fa-arrow-circle-right"></i></a>
 			</div>
 			</li>
 			<li class="credit">
@@ -92,7 +92,7 @@
 				0<span>我的金钱</span>
 			</div>
 			<div class="more">
-				<a href="http://bbs.hyphp.cn/u/vknjhecxa5gd/thread.html">查看更多<i class="fa fa-arrow-circle-right"></i></a>
+				<a href="#">查看更多<i class="fa fa-arrow-circle-right"></i></a>
 			</div>
 			</li>
 			<li class="comments">
@@ -103,7 +103,7 @@
 				0<span>评论留言</span>
 			</div>
 			<div class="more">
-				<a href="http://bbs.hyphp.cn/u/vknjhecxa5gd/post.html">查看更多<i class="fa fa-arrow-circle-right"></i></a>
+				<a href="#">查看更多<i class="fa fa-arrow-circle-right"></i></a>
 			</div>
 			</li>
 			
@@ -117,10 +117,10 @@
 			快捷菜单		</div>
 		<ul>
 			<li>
-			<a href="http://bbs.hyphp.cn/post.html">
+			<a href="#">
 			<i class="fa fa-pencil-square-o"></i>发布文章</a></li>
 
-						<li><a href="http://bbs.hyphp.cn/u/vknjhecxa5gd/file.html"><i class="fa fa-file-o"></i>我的文件</a></li>
+						<li><a href="#"><i class="fa fa-file-o"></i>我的文件</a></li>
 			<li><a href="{{ url('center/edit/'.$res->id.'/edit') }}"><i class="fa fa-cog"></i>修改资料</a></li>	
 		</ul>
 	</div>

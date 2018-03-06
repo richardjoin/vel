@@ -68,7 +68,8 @@ class sortController extends Controller
     //photo/c6c0b68e0ef39a8d37cda42051acc4aa.jpg
     public function upload(Request $request)
     {
-        $file = $request->file('file_upload'); // 图片缓存路径
+        $file = $request->file('file'); // 图片缓存路径
+        //dd($file);
         // 获取文件路径
         $transverse_pic = $file->getRealPath();
         $contents = file_get_contents($transverse_pic);
@@ -104,8 +105,8 @@ class sortController extends Controller
     public function edit($id)
     {
         $row = article::where('article_id',$id)->first();
-        //显示修改页面
-        return view('admins/article/sortedit',['row'=>$row]);
+        $res = article_sort::all();
+        return view('admins/article/sortedit',compact('res','row'));
     }
 
     /**

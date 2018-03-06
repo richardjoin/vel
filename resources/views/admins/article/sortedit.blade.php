@@ -19,8 +19,9 @@
                 <div class="tpl-block ">
                     <div class="am-g tpl-amazeui-form">
                         <div class="am-u-sm-12 am-u-md-9">
-                            <form action='{{ url("admin/sort/store") }}' method="post" class="am-form am-form-horizontal" id="art_form">
+                            <form action='{{ url("admin/sort/update/".$row->article_id) }}' method="post" class="am-form am-form-horizontal" id="art_form">
                                 {{ csrf_field() }}
+                                <input type="hidden" name="_method" value="put">
                                 <div class="am-form-group">
                                     <label for="user-name" class="am-u-sm-3 am-form-label">文章标题</label>
                                     <div class="am-u-sm-9">
@@ -32,7 +33,7 @@
                                 <div class="am-form-group">
                                     <label for="user-email" class="am-u-sm-3 am-form-label">文章作者</label>
                                     <div class="am-u-sm-9">
-                                        <input type="text" name="article_user" id="user-name" placeholder="文章作者">
+                                        <input type="text" name="article_user" value="{{ $row->article_user }}" id="user-name" placeholder="文章作者">
                                     </div>
                                 </div>
     
@@ -41,7 +42,9 @@
                                         <div class="am-u-sm-9">
                                             <select data-am-selected="{btnSize: 'sm'}" name="sort_article_id">
                                                 <option value="选择分类">选择分类</option>
-                                                <option value="{{$row->sort_article_id}}">{{$row->sort_article_name}}</option>
+                                                @foreach($res as $v)
+                                                    <option value="{{$v->sort_article_id}}">{{$v->sort_article_name}}  </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -49,9 +52,12 @@
                                 <div class="am-form-group">
                                     <label for="user-weibo" class="am-u-sm-3 am-form-label">上传图片</label>
                                     <div class="am-u-sm-9">
-                                        <input type="text" name="article_thumb" id="art_thumb"  value="{{old('article_thumb')}}" >
+                                        <input type="hidden" name="article_thumb" id="art_thumb"  value="{{old('article_thumb')}}" >
                                         <input type="file" style="position: absolute;width: 300px;height: 250px;opacity: 0;" name="file_upload" id="file_upload" value="">
-                                        <p><img style="width: 300px;height: 250px;" src="{{ asset('/1.jpg')}}" alt="" id="img1" style="width:100px" ></p>
+                                        
+                                        <p><img style="width: 300px;height: 250px;" src="http://os4vho7yf.bkt.clouddn.com/photo/{{ $row->article_thumb }}" alt="" id="img1" style="width:100px" onerror="{{ asset('/1.jpg') }}" >
+                                        </p>
+                                        </p>
                                     </div>
                                 </div>
 
@@ -124,12 +130,13 @@
                 alert("请选择图片文件");
                 return;
             }
-            var formData = new FormData($( "#art_form" )[0]);
-            //console.log(formData);
+            var formdata = new FormData();
+            formdata.append('file', $("#file_upload")[0].files[0]);
+            console.log(formdata);
             $.ajax({
                 type: "post",
                 url: "{{ url('admin/sort/upload') }}",
-                data: formData,
+                data: formdata,
                 async: true,
                 cache: false,
                 contentType: false,

@@ -27,7 +27,7 @@
                                         <tr>
                                             <th class="table-check"><input type="checkbox" class="tpl-table-fz-check"></th>
                                             <th class="table-id">ID</th>
-                                            <th class="table-title">栏目名称</th>
+                                            <th class="table-title">文章名称</th>
                                             <th class="table-set">操作</th>
                                         </tr>
                                     </thead>
@@ -81,8 +81,6 @@
     <script type="text/javascript">
 
             function del(id, del){
-                
-                alert(del);
                 layer.confirm('你确定要删除吗？', {
                     btn:['确定','取消']
                     },function(){

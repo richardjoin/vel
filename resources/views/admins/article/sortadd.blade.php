@@ -49,7 +49,7 @@
                                         <select data-am-selected="{btnSize: 'sm'}" name="sort_article_id">
                                             <option value="选择分类">选择分类</option>
                                         @foreach($res as $v)
-                                            <option value="{{$v->sort_article_id}}">{{$v->sort_article_name}}</option>
+                                            <option value="{{$v->sort_article_id}}">{{$v->sort_article_name}}  </option>
                                         @endforeach
                                         </select>
                                     </div>

@@ -21,7 +21,7 @@
                 </div>
                 <div class="tpl-block">
                     <div class="am-g">
-                        <div class="am-u-sm-12 am-u-md-3">
+                        <!-- <div class="am-u-sm-12 am-u-md-3">
                             <div class="am-form-group">
                                 <select data-am-selected="{btnSize: 'sm'}">
                                   <option value="option1">所有类别</option>
@@ -33,7 +33,7 @@
                                   <option value="option3">超极本</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="am-g">
                         <div class="tpl-table-images">
@@ -58,7 +58,7 @@
                                             <td class="am-hide-sm-only">{{$v->sort_article_id}}</td>
                                             <td>
                                                 <div class="am-btn-group am-btn-group-xs tpl-edit-content-btn">
-                                                <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-edit"></span> <a href="{{ url('admin/article/'.$v->article_id.'/edit') }}">更改分类</a></button>
+                                                <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-edit"></span> <a href="{{ url('admin/article/'.$v->sort_article_id.'/edit') }}">更改分类</a></button>
                                             </td>
                                         </tr>
                                     </tbody>

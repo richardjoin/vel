@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\model\article;
+use App\model\article_sort;
 
 class articleController extends Controller
 {
@@ -29,8 +30,10 @@ class articleController extends Controller
      */
     public function edit($id)
     {
-        $res = article::where('article_id',$id)->first();
-        return view('admins/article/articleedit',['res'=>$res]);
+        $res = article_sort::all();
+        $arr = article::where('sort_article_id',$id)->first();
+        //$arr = article::where('sort_article_id',$id)->article_sort()->value('sort_article_name');
+        return view('admins/article/articleedit',compact('res','arr'));
     }
 
     /**
@@ -42,7 +45,15 @@ class articleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //修改数据
+        $res = $request->except('_method','_token');
+        $arr = article::where('article_id',$id)->update($res);
+        //dd($arr);
+        if($arr){
+            return redirect('admin/article');
+        }else{
+            return back()->with('error',"修改失败！！！！！！");
+        }
     }
     
 }

@@ -19,7 +19,7 @@ class article_sort extends Model
     }
     public function article()
     {
-        return $this->hasMany('App\Model\article','sort_article_id','sort_article_id');
+        return $this->hasOne('App\Model\article','sort_article_id','sort_article_id');
     }
 
 
