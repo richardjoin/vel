@@ -126,9 +126,11 @@ class LoginController extends Controller
     }
 
     //忘记密码
-    public function pass()
+    public function edit($id)
     {
-        return view('homes/login/password');
+        $res = user::where('id',$id)->first();
+        dd($res);
+        return view('homes/login/password',['res'=>$res]);
     }
     
 }

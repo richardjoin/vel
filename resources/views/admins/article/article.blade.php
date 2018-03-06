@@ -55,7 +55,17 @@
                                             <td><input type="checkbox"></td>
                                             <td class="am-hide-sm-only">{{$v->article_id}}</td>
                                             <td class="am-hide-sm-only">{{$v->article_name}}</td>
-                                            <td class="am-hide-sm-only">{{$v->sort_article_id}}</td>
+                                            <td class="am-hide-sm-only">
+                                        @if($v->sort_article_id==2)
+                                            讨论
+                                        @elseif($v->sort_article_id==3)
+                                            学习
+                                        @elseif($v->sort_article_id==4)
+                                            广告
+                                        @elseif($v->sort_article_id==5)
+                                            技术
+                                        @endif
+                                            </td>
                                             <td>
                                                 <div class="am-btn-group am-btn-group-xs tpl-edit-content-btn">
                                                 <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-edit"></span> <a href="{{ url('admin/article/'.$v->sort_article_id.'/edit') }}">更改分类</a></button>
@@ -65,19 +75,6 @@
                                     </div>
                                 @endforeach
                                 </table>
-                                <div class="am-cf">
-                                    <div class="am-fr">
-                                        <ul class="am-pagination tpl-pagination">
-                                            <li class="am-disabled"><a href="#">«</a></li>
-                                            <li class="am-active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#" >3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li><a href="#">»</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
                                 </div>
                             </div>
                         </div>

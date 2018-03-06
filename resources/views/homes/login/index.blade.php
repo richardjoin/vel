@@ -74,7 +74,7 @@
 							<button style="margin-left:25px;" type="submit" class="am-btn am-btn-default">登录</button>
 						</form>
 						<h3>
-								<a style="margin-left: 25px;" href="{{ url('login/password') }}">忘记密码？</a>
+								<!-- <a style="margin-left: 25px;" href="{{ url('login/password') }}">忘记密码？</a> -->
 								<a style="margin-right: 25px;" href="{{ url('login/register') }}">没有帐号？免费注册！</a>
 							</h3>
 				</div>

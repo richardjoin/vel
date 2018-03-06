@@ -43,16 +43,16 @@
 		<div class="wid_con loginbox">
 			<div class="password_con">
 				<div class="text_box">
+					<form action="" method="post" class="text_box">
+					<input type="hidden" name="_method" value="put">
+                    {{ csrf_field() }}
 					<div>
-						<div><i><img src="/home/login/images/icon01.png"></i><input type="text" placeholder="请输入用户名">
+						<div><i><img src="/home/login/images/icon01.png"></i><input type="text" placeholder="请输入新密码" value="">
 							<span>*</span>
 						</div>
-						<div class="yzm">
-							<i><img src="/home/login/images/icon03.png"></i><input type="text" placeholder="请输入验证码">
-							<label><img src="/home/login/images/yzm.png"></label><span>*</span>
-						</div>
-						<button><a href="{{ url('/login') }}">提 交</a></button>
+						<button tupe="submit">提 交</button>
 					</div>
+					</form>
 				</div>
 			</div>
 			<div class="password_txt">

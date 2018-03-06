@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amaze UI Admin index Examples</title>
+    <title>风宇个人博客</title>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="description" content="这是一个 index 页面">
     <meta name="keywords" content="index">
@@ -28,8 +28,8 @@
             <a href="javascript:;" class="tpl-logo">
                 <img src="/admins/img/logo.png" alt="">
             </a>
-        </div>
-        <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
+        </div><!-- 
+        <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right"> -->
 
         </div>
 
@@ -37,7 +37,7 @@
 
         <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
 
-            <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
+            <!-- <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
                         <span class="am-icon-bell-o"></span> 提醒 <span class="am-badge tpl-badge-success am-round">5</span></span>
@@ -142,7 +142,7 @@
                     </ul>
                 </li>
                 <li><a href="###" class="tpl-header-list-link"><span class="am-icon-sign-out tpl-header-list-ico-out-size"></span></a></li>
-            </ul>
+            </ul> -->
         </div>
     </header>
     
@@ -151,7 +151,7 @@
 
         <div class="tpl-left-nav tpl-left-nav-hover">
             <div class="tpl-left-nav-title">
-                Amaze UI 列表
+                博客管理
             </div>
             <div class="tpl-left-nav-list">
                 <ul class="tpl-left-nav-menu">

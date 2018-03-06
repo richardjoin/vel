@@ -41,7 +41,7 @@
 					</div>
 					<br>
 					<div class="am-form-group">
-						<input type="text" style="border-radius: 5px;" name="pwd" id="doc-ipt-pwd-1" placeholder="设置密码">
+						<input type="password" style="border-radius: 5px;" name="pwd" id="doc-ipt-pwd-1" placeholder="设置密码">
 					</div><br>
 					<div class="am-form-group">
 						<input type="text" name="code" id="doc-ipt-pwd-1" style="width:250px;float:left;border-radius: 5px;" placeholder="输入验证码！">
