@@ -61,18 +61,6 @@
 <div class="dashboard-wrapper select-index">
 	<div class="briefly">
 		<ul>
-			
-			<li class="post">
-			<div class="visual">
-				<i class="fa fa-tasks"></i>
-			</div>
-			<div class="number">
-				{{ $row }}<span>文章作品</span>
-			</div>
-			<div class="more">
-				<a href="#">查看更多<i class="fa fa-arrow-circle-right"></i></a>
-			</div>
-			</li>
 			<li class="photo">
 			<div class="visual">
 				<i class="fa fa-heart"></i>
@@ -84,17 +72,7 @@
 				<a href="#">查看更多<i class="fa fa-arrow-circle-right"></i></a>
 			</div>
 			</li>
-			<li class="credit">
-			<div class="visual">
-				<i class="fa fa-money"></i>
-			</div>
-			<div class="number">
-				0<span>我的金钱</span>
-			</div>
-			<div class="more">
-				<a href="#">查看更多<i class="fa fa-arrow-circle-right"></i></a>
-			</div>
-			</li>
+			
 			<li class="comments">
 			<div class="visual">
 				<i class="fa fa-comments"></i>
@@ -114,14 +92,18 @@
 	
 	<div class="fast-navigation">
 		<div class="nav-title">
-			快捷菜单		</div>
+			快捷菜单		
+        </div>
 		<ul>
 			<li>
-			<a href="#">
-			<i class="fa fa-pencil-square-o"></i>发布文章</a></li>
-
-						<li><a href="#"><i class="fa fa-file-o"></i>我的文件</a></li>
-			<li><a href="{{ url('center/edit/'.$res->id.'/edit') }}"><i class="fa fa-cog"></i>修改资料</a></li>	
+                <a href="#"><i class="fa fa-file-o"></i>我的文件</a>
+            </li>
+			<li>
+                <a href="{{ url('center/edit/'.$res->id.'/edit') }}">
+                    <i class="fa fa-cog"></i>
+                    修改资料
+                </a>
+            </li>	
 		</ul>
 	</div>
 	

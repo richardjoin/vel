@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\model\article;
+use App\model\call;
+use App\model\user;
 
 class IndexController extends Controller
 {
@@ -22,7 +24,13 @@ class IndexController extends Controller
         $res = article::all();
         return view('homes/sy/index',['res'=>$res]);
     }
-
+    public function call($id)
+        {
+            $res = call::find($id)->user()->value('id');
+            dd($res);
+            $arr = user::create($res);
+            return $arr;
+        }
     /**
      * Show the form for creating a new resource.
      *

@@ -59,6 +59,7 @@ Route::group(['prefix' => 'admin', 'middleware'=>'logins'], function(){
 
 //前台(首页)
 Route::get('/','home\IndexController@index');
+Route::resource('/call','home\IndexController@call');
 //前台(登录页面)
 Route::get('/login','home\LoginController@index');
 //验证登录

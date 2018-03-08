@@ -3,6 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
+		<meta name="csrf-token" content="{{ csrf_token() }}" />
 		<title>风宇个人博客</title>
 	</head>
 

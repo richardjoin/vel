@@ -80,13 +80,14 @@ class LoginController extends Controller
         //dd($arr);
         
         //判断验证码是否正确
-        if(session('phone')!==$arr['code']){
+        if(session('phone')!=$arr['code']){
             return view('homes/login/register')->with('msg','验证码错误！');
         }
 
         //判断两次密码是否输入正确
         if($arr['pwd']!==$arr['password']){
-            return redirect('login/register');
+            dd(11);
+            return redirect('homes/login/register');
         }
         $res = user::create($arr);
         //把添加的变成array

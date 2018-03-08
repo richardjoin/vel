@@ -81,7 +81,7 @@
 												</p> -->
 												<!-- <div class="overView">{!! $v->article_content !!}</div> -->
 												<div class="overView">{{ $v->article_intro }}</div>
-												<p><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">{{ $v->article_user }}</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:852</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:99</span><span class="count"><i class="glyphicon glyphicon-time"></i>{{ $v->article_time }}</span></p>
+												<p><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">{{ $v->article_user }}</a></span> <a href="lavascript:viod(0);" onclick="doCalll({{ $v->article_id }})" class="count"><i class="glyphicon glyphicon-eye-open"></i>收藏</a><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:99</span><span class="count"><i class="glyphicon glyphicon-time"></i>{{ $v->article_time }}</span></p>
 											</div>
 											<div class="contentImage">
 												<!--<img src="img/slider/67zmaej.png"/>-->
@@ -107,8 +107,8 @@
 						<div class="panel panel-default sitetip">
 							<a href="article_detail.html">
 								<strong>站点公告</strong>
-								<h3 class="title">嫁人就嫁程序员</h3>
-								<p class="overView">个人网站正在建设中个人网站正在建设中个人网站正在建设中个人网站正在建设中个人网站正在建设中个人网站正在建设中个人网站正在建设中个人网站正在建设中个人网站正在建设中个人网站正在建设中。。。</p>
+								<h3 class="title"></h3>
+								<p class="overView"></p>
 							</a>
 						</div>
 
@@ -118,19 +118,12 @@
 							</div>
 							<div class="panel-body">
 								<div class="labelList">
-									<a class="label label-default">java</a>
-									<a class="label label-default">tomcat负载均衡</a>
-									<a class="label label-default">panel</a>
-									<a class="label label-default" href="/tag/jQuery">jQuery</a>
-									<a class="label label-default" href="/tag/jQuery选择器">jQuery选择器</a>
-									<a class="label label-default" href="/tag/linux">linux</a>
-									<a class="label label-default" href="/tag/Nginx">Nginx</a>
-									<a class="label label-default" href="/tag/linux文件类型">linux文件类型</a>
-									<a class="label label-default" href="/tag/chrome请求两次">chrome</a>
-									<a class="label label-default" href="/tag/Redis">Redis</a>
-									<a class="label label-default" href="/tag/spring">spring</a>
-									<a class="label label-default" href="/tag/tomcat">tomcat</a>
-									<a class="label label-default" href="/tag/SyntaxHighlighter">SyntaxHighlighter</a>
+									<a class="label label-default" href="http://www.runoob.com/java/java-tutorial.html">java</a>
+									<a class="label label-default" href="http://www.runoob.com/jquery/jquery-tutorial.html">jQuery</a>
+									<a class="label label-default" href="http://www.runoob.com/jquery/jquery-selectors.html">jQuery选择器</a>
+									<a class="label label-default" href="http://www.runoob.com/linux/linux-tutorial.html">linux</a>
+									<a class="label label-default" href="http://www.runoob.com/linux/nginx-install-setup.html">Nginx</a>
+									<a class="label label-default" href="https://redis.io/">Redis</a>
 								</div>
 							</div>
 						</div>
@@ -188,4 +181,41 @@
 				</div>
 			</div>
 		</div>
+	<script src="/admins/js/jquery.min.js"></script>
+	<script src="/layer/layer.js"></script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+       
+        function doCall(id) {
+        	alert(id);
+            
+            $.ajax({
+                type: "post",
+                url: "{{ url('/call') }}",
+                data: {'id':id},
+                async: true,
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend:function(){
+                      // 菊花转转图
+                      // $('#img1').attr('src', 'http://img.lanrentuku.com/img/allimg/1212/5-121204193R0-50.gif');
+                      //
+                       a = layer.load();
+                  },
+                success: function(data) {
+                		alert(data);
+                    layer.close(a);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("请检查网络后重试");
+                    layer.close(a);
+                }
+            });
+        }
+    </script>
 @endsection
